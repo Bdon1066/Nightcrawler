@@ -131,7 +131,7 @@ GameObject:
   - component: {fileID: 8451268}
   - component: {fileID: 8451270}
   - component: {fileID: 8451269}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: Cube (1)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -215,7 +215,7 @@ GameObject:
   - component: {fileID: 12445953}
   - component: {fileID: 12445952}
   - component: {fileID: 12445951}
-  m_Layer: 0
+  m_Layer: 7
   m_Name: Cube
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -319,7 +319,7 @@ GameObject:
   - component: {fileID: 264663906}
   - component: {fileID: 264663905}
   - component: {fileID: 264663904}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: Grafix
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -755,7 +755,7 @@ GameObject:
   - component: {fileID: 906874913}
   - component: {fileID: 906874915}
   - component: {fileID: 906874914}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: Cube (3)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -963,7 +963,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 966877430}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: GroundCheckPos
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -996,7 +996,7 @@ GameObject:
   - component: {fileID: 1246227314}
   - component: {fileID: 1246227316}
   - component: {fileID: 1246227315}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: Cube (2)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1081,7 +1081,7 @@ GameObject:
   - component: {fileID: 1271473198}
   - component: {fileID: 1271473200}
   - component: {fileID: 1271473201}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: Player
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1124,6 +1124,9 @@ MonoBehaviour:
   groundLayer:
     serializedVersion: 2
     m_Bits: 8
+  teleportThruLayer:
+    serializedVersion: 2
+    m_Bits: 128
   speed: 12
   gravityScale: 5
   jumpSpeed: 20
@@ -1444,7 +1447,7 @@ GameObject:
   - component: {fileID: 1706893936}
   - component: {fileID: 1706893938}
   - component: {fileID: 1706893937}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: Cube
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1527,7 +1530,7 @@ GameObject:
   - component: {fileID: 1827517313}
   - component: {fileID: 1827517315}
   - component: {fileID: 1827517314}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: Cylinder
   m_TagString: Untagged
   m_Icon: {fileID: 0}

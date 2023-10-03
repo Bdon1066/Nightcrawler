@@ -4,6 +4,7 @@ using System.Collections.Generic;
 using Unity.VisualScripting;
 using UnityEngine;
 using UnityEngine.InputSystem.HID;
+using UnityEngine.LowLevel;
 using static UnityEngine.UI.Image;
 
 public class PlayerMovement : MonoBehaviour
@@ -14,6 +15,7 @@ public class PlayerMovement : MonoBehaviour
     public Transform camera;
     public Transform  groundCheckPos;
     public LayerMask groundLayer;
+    public LayerMask teleportThruLayer;
 
     [Header("Movement")]
     public float speed = 12f;
@@ -74,11 +76,11 @@ public class PlayerMovement : MonoBehaviour
         if (Input.GetMouseButtonDown(0)) //left click
         {
             teleportLineDraw.SetPosition(0, controller.transform.position);
-            if (Physics.Raycast(controller.transform.position, controller.transform.forward, out hit, teleportDistance))
+            if (Physics.Raycast(controller.transform.position, controller.transform.forward, out hit, teleportDistance, ~ teleportThruLayer))
             {
                 teleportLineDraw.SetPosition(1, hit.point);
-               // teleportTarget = hit.point;
-               // isTeleporting = true;
+                teleportTarget = hit.point;
+                isTeleporting = true;
             }
             else
             {
@@ -125,7 +127,7 @@ public class PlayerMovement : MonoBehaviour
             moveDir = Quaternion.Euler(0f, targetAngle, 0f) * Vector3.forward * teleportSpeed;
 
         }
- 
+        gameObject.layer = LayerMask.NameToLayer("IgnoreCollisions");
         controller.Move(moveDir * Time.deltaTime);
         Invoke("StopTeleport", teleportTime);
        
@@ -133,11 +135,13 @@ public class PlayerMovement : MonoBehaviour
     void StopTeleport()
     {
         isTeleporting = false;
+        gameObject.layer = LayerMask.NameToLayer("Player");
     }
     private void Gravity()
     {
         ySpeed += Physics.gravity.y * gravityScale * Time.deltaTime;
     }
+
 
 
     private bool IsGrounded()
