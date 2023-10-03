@@ -34,6 +34,7 @@ public class PlayerMovement : MonoBehaviour
     [Header("Camera")]
     public float turnSmoothTime = 0.1f;
     private float turnSmoothVelocity;
+
     private void Start()
     {
         teleportTime = teleportDistance / teleportSpeed;
