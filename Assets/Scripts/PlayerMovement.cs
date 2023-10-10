@@ -22,9 +22,12 @@ public class PlayerMovement : MonoBehaviour
     public float gravityScale = 5f;
     public float jumpSpeed = 10f;
     private float ySpeed;
+    private bool enableGravity = true;
+    private bool enableMovement = true;
 
     [Header("Teleporting")]
-    [SerializeField] private float teleportDistance;
+    [SerializeField] private float startingTeleportDistance;
+                     private float teleportDistance;
     [SerializeField] private float teleportSpeed;
     private float teleportTime;
     private Vector3 teleportTarget;
@@ -34,15 +37,14 @@ public class PlayerMovement : MonoBehaviour
     [Header("Camera")]
     public float turnSmoothTime = 0.1f;
     private float turnSmoothVelocity;
-
     private void Start()
     {
-        teleportTime = teleportDistance / teleportSpeed;
+        teleportDistance = startingTeleportDistance;
     }
     void Update() //for detecting inputs
     {
         Jump();
-        Teleport();
+        TeleportInput();
 
     }
     void FixedUpdate() //for calaculating movement
@@ -53,45 +55,25 @@ public class PlayerMovement : MonoBehaviour
         }
         else
         {
-            TeleportMove(teleportTarget);   
+            TeleportMovement();   
         }
        
         Gravity();
 
     }
-
-    private void Jump()
+    private void Gravity()
     {
-       if (Input.GetButtonDown("Jump") && IsGrounded())
-       {
-            ySpeed = jumpSpeed;
-       }
-    }
-    void Teleport()
-    {
-        // Camera cameraObject = camera.gameObject.GetComponent<Camera>();
-        // Vector3 rayOrigin = cameraObject.ViewportToWorldPoint(new Vector3(.5f, .5f, 0)); //for maybe making it camera based
-
-        RaycastHit hit;
-
-        if (Input.GetMouseButtonDown(0)) //left click
-        {
-            teleportLineDraw.SetPosition(0, controller.transform.position);
-            if (Physics.Raycast(controller.transform.position, controller.transform.forward, out hit, teleportDistance, ~ teleportThruLayer))
-            {
-                teleportLineDraw.SetPosition(1, hit.point);
-                teleportTarget = hit.point;
-                isTeleporting = true;
-            }
-            else
-            {
-                teleportLineDraw.SetPosition(1, controller.transform.position + (controller.transform.forward * teleportDistance));
-                teleportTarget = controller.transform.forward * teleportDistance;
-                isTeleporting = true;
-            }
+        if (enableGravity){
+            ySpeed += Physics.gravity.y * gravityScale * Time.deltaTime;
         }
     }
-   
+    private void Jump()
+    {
+        if (Input.GetButtonDown("Jump") && IsGrounded())
+        {
+            ySpeed = jumpSpeed;
+        }
+    }
     private void Move()
     {
         float horizontal = Input.GetAxisRaw("Horizontal");
@@ -106,18 +88,69 @@ public class PlayerMovement : MonoBehaviour
             transform.rotation = Quaternion.Euler(0f, angle, 0f);
 
             moveDir = Quaternion.Euler(0f, targetAngle, 0f) * Vector3.forward * speed;
-    
+
         }
         moveDir.y = ySpeed;
+        if (enableMovement) { controller.Move(moveDir * Time.deltaTime); }
        
-        controller.Move(moveDir * Time.deltaTime);
 
     }
-    void TeleportMove(Vector3 target)
+
+  
+    void TeleportInput() 
     {
-      
+        //When player holds down left click || TODO: Add so they have to hold down for a certain amount of time before telporting activates
+        if (Input.GetMouseButton(0))
+        {
+            FreezeMovement();
+            TeleportGraphics();
+
+        }
+        //When player lets go of left click 
+        if (Input.GetMouseButtonUp(0))
+        {
+          
+            Teleport();
+        }
+    }
+    void TeleportGraphics() 
+    {
+        //draws line of where teleport will go || TODO add 
+        teleportLineDraw.SetPosition(0, controller.transform.position);
+
+        RaycastHit hit;
+        if (Physics.Raycast(controller.transform.position, controller.transform.forward, out hit, teleportDistance, ~teleportThruLayer))
+        {
+            teleportLineDraw.SetPosition(1, hit.point);
+        }
+        else
+        {
+            teleportLineDraw.SetPosition(1, controller.transform.position + (controller.transform.forward * teleportDistance));
+        }
+    }
+    void Teleport()
+    {
+        RaycastHit hit;
+       
+        if (Physics.Raycast(controller.transform.position, controller.transform.forward, out hit, teleportDistance, ~teleportThruLayer))
+        {
+            teleportTarget = hit.point;
+            teleportDistance = Vector3.Distance(controller.transform.forward, hit.point);
+            isTeleporting = true;
+        }
+        else
+        {
+            teleportTarget = controller.transform.forward * teleportDistance;
+            isTeleporting = true;
+        }
+    }
+    
+    void TeleportMovement()
+    {
+        teleportTime = teleportDistance / teleportSpeed;
+
         Vector3 moveDir = Vector3.zero;
-        Vector3 direction = new Vector3(target.x, 0f, target.z).normalized;
+        Vector3 direction = new Vector3(teleportTarget.x, 0f, teleportTarget.z).normalized;
 
         if (direction.magnitude >= 0.1f)
         {
@@ -129,19 +162,33 @@ public class PlayerMovement : MonoBehaviour
 
         }
         gameObject.layer = LayerMask.NameToLayer("IgnoreCollisions");
+
         controller.Move(moveDir * Time.deltaTime);
+        
         Invoke("StopTeleport", teleportTime);
        
     }
     void StopTeleport()
     {
+        controller.Move(Vector3.zero);
         isTeleporting = false;
         gameObject.layer = LayerMask.NameToLayer("Player");
+        UnFreezeMovement();
+
+
     }
-    private void Gravity()
+    void FreezeMovement()
     {
-        ySpeed += Physics.gravity.y * gravityScale * Time.deltaTime;
+        enableGravity = false;
+        enableMovement = false;
+       
     }
+    void UnFreezeMovement()
+    {
+        enableGravity = true;
+        enableMovement = true;
+    }
+ 
 
 
 
