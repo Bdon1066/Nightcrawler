@@ -99,7 +99,7 @@ public class PlayerMovement : MonoBehaviour
   
     void TeleportInput() 
     {
-        //When player holds down left click || TODO: Add so they have to hold down for a certain amount of time before telporting activates
+        //When player holds down left click || TODO:  maybe Add so they have to hold down for a certain amount of time before telporting activates
         if (Input.GetMouseButton(0))
         {
             FreezeMovement();
@@ -115,7 +115,7 @@ public class PlayerMovement : MonoBehaviour
     }
     void TeleportGraphics() 
     {
-        //draws line of where teleport will go || TODO add 
+        //draws line of where teleport will go || TODO add a little silloute thing where the player will end up
         teleportLineDraw.SetPosition(0, controller.transform.position);
 
         RaycastHit hit;
@@ -165,11 +165,12 @@ public class PlayerMovement : MonoBehaviour
 
         controller.Move(moveDir * Time.deltaTime);
         
-        Invoke("StopTeleport", teleportTime);
+        Invoke("StopTeleport", teleportTime - 0.01f);
        
     }
     void StopTeleport()
     {
+
         controller.Move(Vector3.zero);
         isTeleporting = false;
         gameObject.layer = LayerMask.NameToLayer("Player");
