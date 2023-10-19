@@ -7,13 +7,16 @@ using UnityEngine.InputSystem.HID;
 using UnityEngine.LowLevel;
 using static UnityEngine.UI.Image;
 
-public class PlayerMovement : MonoBehaviour
+public class PlayerController : MonoBehaviour
 {
     [Header("Refrences")]
     public CharacterController controller;
+    public GameManager gameManager;
+    public Animator animator;
     public Transform transform;
     public Transform camera;
     public Transform  groundCheckPos;
+    public GameObject transparentPlayer;
     public LayerMask groundLayer;
     public LayerMask teleportThruLayer;
 
@@ -32,7 +35,9 @@ public class PlayerMovement : MonoBehaviour
     private float teleportTime;
     private Vector3 teleportTarget;
     private bool isTeleporting;
+    private bool isAimingTeleport;
     public LineRenderer teleportLineDraw;
+    [Header("Combat")]
 
     [Header("Camera")]
     public float turnSmoothTime = 0.1f;
@@ -45,6 +50,7 @@ public class PlayerMovement : MonoBehaviour
     {
         Jump();
         TeleportInput();
+        Attack();
 
     }
     void FixedUpdate() //for calaculating movement
@@ -104,17 +110,20 @@ public class PlayerMovement : MonoBehaviour
         {
             FreezeMovement();
             TeleportGraphics();
-
+            isAimingTeleport = true;
         }
         //When player lets go of left click 
         if (Input.GetMouseButtonUp(0))
         {
-          
             Teleport();
+            isAimingTeleport = false;
         }
     }
-    void TeleportGraphics() 
+    void TeleportGraphics() //handles graphical aspect of teleporting
     {
+       
+        GameObject transparentWall;
+       
         //draws line of where teleport will go || TODO add a little silloute thing where the player will end up
         teleportLineDraw.SetPosition(0, controller.transform.position);
 
@@ -122,11 +131,25 @@ public class PlayerMovement : MonoBehaviour
         if (Physics.Raycast(controller.transform.position, controller.transform.forward, out hit, teleportDistance, ~teleportThruLayer))
         {
             teleportLineDraw.SetPosition(1, hit.point);
+            
         }
         else
         {
             teleportLineDraw.SetPosition(1, controller.transform.position + (controller.transform.forward * teleportDistance));
+            
         }
+
+       //Make the wall we are looking to teleport thru transparent
+        if (Physics.Raycast(controller.transform.position, controller.transform.forward, out hit, teleportDistance, teleportThruLayer)) 
+        {
+           
+            transparentWall = hit.collider.gameObject;
+
+            transparentWall.GetComponent<TransparentWall>().Transparent();
+        }
+      
+
+
     }
     void Teleport()
     {
@@ -145,7 +168,7 @@ public class PlayerMovement : MonoBehaviour
         }
     }
     
-    void TeleportMovement()
+    void TeleportMovement() //when isTeleporting True
     {
         teleportTime = teleportDistance / teleportSpeed;
 
@@ -168,6 +191,8 @@ public class PlayerMovement : MonoBehaviour
         Invoke("StopTeleport", teleportTime - 0.01f);
        
     }
+  
+    
     void StopTeleport()
     {
 
@@ -189,7 +214,13 @@ public class PlayerMovement : MonoBehaviour
         enableGravity = true;
         enableMovement = true;
     }
- 
+    void Attack()
+    {
+        if (Input.GetMouseButton(1))
+        {
+            animator.SetTrigger("Attack");
+        }
+    }
 
 
 
