@@ -1,6 +1,7 @@
 using System;
 using System.Collections;
 using System.Collections.Generic;
+using System.Diagnostics;
 using Unity.VisualScripting;
 using UnityEngine;
 using UnityEngine.InputSystem.HID;
@@ -22,9 +23,11 @@ public class PlayerController : MonoBehaviour
 
     [Header("Movement")]
     public float speed = 12f;
+    public float sprintMultiplier = 1.2f;
     public float gravityScale = 5f;
     public float jumpSpeed = 10f;
     private float ySpeed;
+    private bool isSprinting;
     private bool enableGravity = true;
     private bool enableMovement = true;
 
@@ -51,6 +54,7 @@ public class PlayerController : MonoBehaviour
         Jump();
         TeleportInput();
         Attack();
+        Sprint();
 
     }
     void FixedUpdate() //for calaculating movement
@@ -97,12 +101,25 @@ public class PlayerController : MonoBehaviour
 
         }
         moveDir.y = ySpeed;
-        if (enableMovement) { controller.Move(moveDir * Time.deltaTime); }
-       
+        if (enableMovement && !isSprinting) { controller.Move(moveDir * Time.deltaTime); }
+        else if (enableMovement && isSprinting) { controller.Move((moveDir * sprintMultiplier) * Time.deltaTime); }
+
 
     }
+    private void Sprint()
+    {
+        if (Input.GetKey(KeyCode.LeftShift))
+        {
+            isSprinting = true;
+            print("is sprinting");
+        }
+        else
+        {
+            isSprinting = false;
+        }
+    }
 
-  
+
     void TeleportInput() 
     {
         //When player holds down left click || TODO:  maybe Add so they have to hold down for a certain amount of time before telporting activates
