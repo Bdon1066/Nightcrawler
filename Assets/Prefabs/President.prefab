@@ -260,8 +260,6 @@ GameObject:
   - component: {fileID: 5068673349368709604}
   - component: {fileID: 1514153909007603801}
   - component: {fileID: 4853524808921187639}
-  - component: {fileID: 5733129850002561666}
-  - component: {fileID: 4228486897968890545}
   m_Layer: 6
   m_Name: HandRight
   m_TagString: Untagged
@@ -334,40 +332,6 @@ MeshRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 0
   m_AdditionalVertexStreams: {fileID: 0}
---- !u!65 &5733129850002561666
-BoxCollider:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 3259474562142522633}
-  m_Material: {fileID: 0}
-  m_IncludeLayers:
-    serializedVersion: 2
-    m_Bits: 0
-  m_ExcludeLayers:
-    serializedVersion: 2
-    m_Bits: 0
-  m_LayerOverridePriority: 0
-  m_IsTrigger: 1
-  m_ProvidesContacts: 0
-  m_Enabled: 1
-  serializedVersion: 3
-  m_Size: {x: 1, y: 1, z: 1}
-  m_Center: {x: 0, y: 0, z: 0}
---- !u!114 &4228486897968890545
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 3259474562142522633}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 499d9edc073880442893624b72c7e2e3, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  controller: {fileID: 0}
 --- !u!1 &4182058998274560957
 GameObject:
   m_ObjectHideFlags: 0
@@ -461,7 +425,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1176041207550318323}
   - component: {fileID: 2017520548125498701}
-  m_Layer: 6
+  m_Layer: 7
   m_Name: President
   m_TagString: Enemy
   m_Icon: {fileID: 0}

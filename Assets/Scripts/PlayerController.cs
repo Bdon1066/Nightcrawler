@@ -20,6 +20,7 @@ public class PlayerController : MonoBehaviour
     public GameObject transparentPlayer;
     public LayerMask groundLayer;
     public LayerMask teleportThruLayer;
+    public LayerMask invisibleLayer;
 
     [Header("Movement")]
     public float speed = 12f;
@@ -38,9 +39,10 @@ public class PlayerController : MonoBehaviour
     private float teleportTime;
     private Vector3 teleportTarget;
     private bool isTeleporting;
-    private bool isAimingTeleport;
+    [HideInInspector ]public bool isInvisible;
     public LineRenderer teleportLineDraw;
     [Header("Combat")]
+    public Transform combatHand;
 
     [Header("Camera")]
     public float turnSmoothTime = 0.1f;
@@ -48,6 +50,7 @@ public class PlayerController : MonoBehaviour
     private void Start()
     {
         teleportDistance = startingTeleportDistance;
+        teleportLineDraw.enabled = false;
     }
     void Update() //for detecting inputs
     {
@@ -56,6 +59,7 @@ public class PlayerController : MonoBehaviour
         Attack();
         Sprint();
 
+       
     }
     void FixedUpdate() //for calaculating movement
     {
@@ -123,25 +127,27 @@ public class PlayerController : MonoBehaviour
     void TeleportInput() 
     {
         //When player holds down left click || TODO:  maybe Add so they have to hold down for a certain amount of time before telporting activates
-        if (Input.GetMouseButton(0))
+        if (Input.GetMouseButton(1))
         {
             FreezeMovement();
             TeleportGraphics();
-            isAimingTeleport = true;
+            gameObject.layer = LayerMask.NameToLayer("IgnoreCollisions");
+            isInvisible = true;
         }
         //When player lets go of left click 
-        if (Input.GetMouseButtonUp(0))
+        if (Input.GetMouseButtonUp(1))
         {
             Teleport();
-            isAimingTeleport = false;
+            
         }
     }
     void TeleportGraphics() //handles graphical aspect of teleporting
     {
        
         GameObject transparentWall;
-       
+
         //draws line of where teleport will go || TODO add a little silloute thing where the player will end up
+        teleportLineDraw.enabled = true;
         teleportLineDraw.SetPosition(0, controller.transform.position);
 
         RaycastHit hit;
@@ -201,7 +207,7 @@ public class PlayerController : MonoBehaviour
             moveDir = Quaternion.Euler(0f, targetAngle, 0f) * Vector3.forward * teleportSpeed;
 
         }
-        gameObject.layer = LayerMask.NameToLayer("IgnoreCollisions");
+       
 
         controller.Move(moveDir * Time.deltaTime);
         
@@ -215,8 +221,10 @@ public class PlayerController : MonoBehaviour
 
         controller.Move(Vector3.zero);
         isTeleporting = false;
+        isInvisible = false;
         gameObject.layer = LayerMask.NameToLayer("Player");
         UnFreezeMovement();
+        teleportLineDraw.enabled = false;
 
 
     }
@@ -233,10 +241,15 @@ public class PlayerController : MonoBehaviour
     }
     void Attack()
     {
-        if (Input.GetMouseButton(1))
+        if (Input.GetMouseButton(0))
         {
-            animator.SetTrigger("Attack");
+            animator.SetBool("isAttacking", true);
         }
+        else
+        {
+            animator.SetBool("isAttacking", false);
+        }
+       
     }
 
 

@@ -4,11 +4,12 @@ using UnityEngine;
 
 public class PlayerCombat : MonoBehaviour
 {
-    public PlayerController controller;
+    public PlayerController pc;
+    private Animator pcAnimator;
     // Start is called before the first frame update
     void Start()
     {
-        
+        pcAnimator= pc.gameObject.GetComponent<Animator>();
     }
 
     // Update is called once per frame
@@ -16,12 +17,18 @@ public class PlayerCombat : MonoBehaviour
     {
         
     }
+
     private void OnTriggerEnter(Collider collider)
     {
-        if (collider.gameObject.CompareTag("Enemy"))
+        if (pcAnimator.GetBool("isAttacking"))
         {
-            Destroy(collider.gameObject);
+            if (collider.gameObject.CompareTag("Enemy"))
+            {
+                Destroy(collider.gameObject);
+                Debug.Log("KILL");
+            }
         }
+            
     }
 }
 
