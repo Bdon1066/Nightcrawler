@@ -13,11 +13,13 @@ public class PlayerController : MonoBehaviour
     [Header("Refrences")]
     public CharacterController controller;
     public GameManager gameManager;
+    public UIManager uIManager;
     public Animator animator;
-    public Transform transform;
+
     public Transform camera;
     public Transform  groundCheckPos;
     public GameObject transparentPlayer;
+    public Transform playerSpawn;
     public LayerMask groundLayer;
     public LayerMask teleportThruLayer;
     public LayerMask invisibleLayer;
@@ -43,12 +45,16 @@ public class PlayerController : MonoBehaviour
     public LineRenderer teleportLineDraw;
     [Header("Combat")]
     public Transform combatHand;
+    public float startingHealth;
+    private float health;
 
-    [Header("Camera")]
-    public float turnSmoothTime = 0.1f;
+ 
+    private float turnSmoothTime = 0.1f;
     private float turnSmoothVelocity;
+
     private void Start()
     {
+        health = startingHealth;
         teleportDistance = startingTeleportDistance;
         teleportLineDraw.enabled = false;
     }
@@ -208,7 +214,7 @@ public class PlayerController : MonoBehaviour
 
         }
        
-
+        
         controller.Move(moveDir * Time.deltaTime);
         
         Invoke("StopTeleport", teleportTime - 0.01f);
@@ -251,7 +257,32 @@ public class PlayerController : MonoBehaviour
         }
        
     }
+    public void TakeDamage(float damageAmount)
+    {
+        print("taking damage");
+        health = health - damageAmount;
+        uIManager.UpdateHealth(health);
+        if (health <= 0)
+        {
+            health = 0;
+            Death();
+        }
+        
+    }
+    private void Death()
+    {
+        Respawn();
+    }
+    private void Respawn()
+    {
+        health = startingHealth;
+        uIManager.UpdateHealth(health);
 
+        controller.enabled = false;
+        transform.position = playerSpawn.position;
+        transform.rotation = playerSpawn.rotation;
+        controller.enabled = true;
+    }
 
 
     private bool IsGrounded()
