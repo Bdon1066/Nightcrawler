@@ -79,7 +79,7 @@ public class PlayerController : MonoBehaviour
         TeleportInput();
         Attack();
         Sprint();
-        StaminaDrain();
+        Stamina();
 
        
     }
@@ -152,8 +152,9 @@ public class PlayerController : MonoBehaviour
             isInvisible = true;
         }
         //When player lets go of left click 
-        if (Input.GetMouseButtonUp(1))
+        if (Input.GetMouseButtonUp(1) && teleportStamina > 10)
         {
+            teleportStamina -= 10;
             Teleport();
             
         }
@@ -164,12 +165,9 @@ public class PlayerController : MonoBehaviour
     {
         playerGraphics.TransparentGraphics(); //set player model to be transparent
 
-        GameObject transparentWall;
-
         //draws line of where teleport will go || TODO add a little silloute thing where the player will end up
         teleportLineDraw.enabled = true;
         teleportLineDraw.SetPosition(0, controller.transform.position);
-
         RaycastHit hit;
         if (Physics.Raycast(controller.transform.position, controller.transform.forward, out hit, teleportDistance, ~teleportThruLayer))
         {
@@ -180,11 +178,17 @@ public class PlayerController : MonoBehaviour
             teleportLineDraw.SetPosition(1, controller.transform.position + (controller.transform.forward * teleportDistance));
         }
 
-       //Make the wall we are looking to teleport thru transparent
+        GameObject transparentWall;
+        //Make the wall we are looking to teleport thru transparent
         if (Physics.Raycast(controller.transform.position, controller.transform.forward, out hit, teleportDistance, teleportThruLayer)) 
         {
             transparentWall = hit.collider.gameObject;
-            transparentWall.GetComponent<TransparentWall>().Transparent();
+
+            if (transparentWall.GetComponent<TransparentWall>() != null)
+            {
+                transparentWall.GetComponent<TransparentWall>().Transparent();
+            }
+     
         }
       
 
@@ -241,7 +245,7 @@ public class PlayerController : MonoBehaviour
         UnFreezeMovement();
         teleportLineDraw.enabled = false;
     }
-    void StaminaDrain()
+    void Stamina()
     {
         uIManager.UpdateUI(health, teleportStamina);
         if (isInvisible)
