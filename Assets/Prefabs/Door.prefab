@@ -15,7 +15,7 @@ GameObject:
   - component: {fileID: 4348857181161221384}
   m_Layer: 7
   m_Name: Door
-  m_TagString: Untagged
+  m_TagString: Teleportable
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -119,4 +119,4 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   OpaqueMaterial: {fileID: 2100000, guid: 184ee53aa1bcfe842a76fb1a993804c3, type: 2}
-  transparentMaterial: {fileID: 2100000, guid: f8af7f6f66ae758428b4e060ff6fc929, type: 2}
+  transparentMaterial: {fileID: 2100000, guid: 3f4bd9d738b018c4f905ba8f80956817, type: 2}

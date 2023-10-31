@@ -8,6 +8,8 @@ TagManager:
   - Blue
   - Gold
   - Brown
+  - Teleportable
+  - President
   layers:
   - Default
   - TransparentFX
@@ -19,7 +21,7 @@ TagManager:
   - TeleportThrough
   - IgnoreCollisions
   - Invisible
-  - 
+  - PlayerAttackCollider
   - 
   - 
   - 

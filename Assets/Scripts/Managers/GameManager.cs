@@ -4,8 +4,6 @@ using UnityEngine;
 
 public class GameManager : MonoBehaviour
 {
-    [Header("Material Refrences")]
-    public Material defaultMaterial;
-    public Material transparentMaterial;
+   
 }
 

@@ -47,7 +47,7 @@ public class EnemyController : MonoBehaviour
         RaycastHit hit;
         Vector3 direction = (playerLocation.position - this.transform.position).normalized;
 
-       if( Physics.Raycast(controller.transform.position, direction, out hit, sightDistance))
+       if( Physics.Raycast(controller.transform.position, direction, out hit, sightDistance, ~playerLayer))
        {
             if (hit.collider.gameObject.CompareTag("Player") && !player.isInvisible)
             {

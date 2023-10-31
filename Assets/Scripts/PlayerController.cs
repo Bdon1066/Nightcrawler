@@ -13,43 +13,52 @@ public class PlayerController : MonoBehaviour
     [Header("Refrences")]
     [SerializeField] private CharacterController controller;
     [SerializeField] private GameManager gameManager;
-    [SerializeField] private UIManager uIManager;
+    [SerializeField] public UIManager uIManager;
     [SerializeField] private Animator animator;
     [SerializeField] private PlayerGraphics playerGraphics;
     [SerializeField] private Transform camera;
     [SerializeField] private Transform  groundCheckPos;
     [SerializeField] private GameObject transparentPlayer;
     [SerializeField] private Transform playerSpawn;
-                     public LayerMask groundLayer;
-                     public LayerMask teleportThruLayer;
+    [Space(10)]
+     public LayerMask groundLayer;
+     public LayerMask teleportThruLayer;
+     public LayerMask playerAttackCollider;
 
     [Header("Movement")]
     [SerializeField] private float speed = 20f;
     [SerializeField] private float sprintMultiplier = 1.5f;
     [SerializeField] private float gravityScale = 9f;
     [SerializeField] private float jumpSpeed = 40f;
-                     private float ySpeed;
-                     private bool isSprinting;
-                     private bool enableGravity = true;
-                     private bool enableMovement = true;
+     private float ySpeed;
+     private bool isSprinting;
+     private bool enableGravity = true;
+     private bool enableMovement = true;
 
     [Header("Teleporting")]
     [SerializeField] private float startingTeleportDistance;  
     [SerializeField] private float teleportSpeed;
+    [Space(10)]
     [SerializeField] private float startingTeleportStamina = 100f;
-    [SerializeField] private float teleportStaminaDPS = 1f;
-                     private float teleportStamina;
+    [SerializeField] private float teleportCost = 10f;
+    [SerializeField] private float teleportStaminaRegen = 1f;
+    [SerializeField] private float staminaRegenDelay = 0.5f;
+     private float teleportStamina;
+     private bool regenStamina = true;
     [HideInInspector] public bool isInvisible;
-                     private float teleportDistance;
-                     private float teleportTime;
-                     private Vector3 teleportTarget;
-                     private bool isTeleporting;
-                     public LineRenderer teleportLineDraw;
+     private float teleportDistance;
+     private float teleportTime;
+     private Vector3 teleportTarget;
+     private bool isTeleporting;
+    [Space(10)]
+     public LineRenderer teleportLineDraw;
 
     [Header("Combat")]
     [SerializeField] private Transform combatHand;
     [SerializeField] private float startingHealth;
-                     private float health;
+    [SerializeField] private float healthRegen;
+    [SerializeField] private float healthRegenDelay;
+     private float health;
 
     //CAMERA
     private float turnSmoothTime = 0.1f;
@@ -80,7 +89,7 @@ public class PlayerController : MonoBehaviour
         Attack();
         Sprint();
         Stamina();
-
+        HealthRegen();
        
     }
     void FixedUpdate() //for calaculating movement
@@ -150,24 +159,26 @@ public class PlayerController : MonoBehaviour
             TeleportGraphics();
             gameObject.layer = LayerMask.NameToLayer("IgnoreCollisions");
             isInvisible = true;
+           
         }
         //When player lets go of left click 
-        if (Input.GetMouseButtonUp(1) && teleportStamina > 10)
+        if (Input.GetMouseButtonUp(1) && teleportStamina >= teleportCost)
         {
-            teleportStamina -= 10;
+            teleportStamina -= teleportCost;   
             Teleport();
-            
         }
 
-        // TO DO ADD UH YOU CANT TELEPORT UNLESS YOU HAVE ENOYGH STAMINAAAAAAAHSD98UWQ0D80QWUIDS[QWDI[WQ90[DWQ[D0-I[EQCIXHE87CY9-EWUC;
     }
     void TeleportGraphics() //handles graphical aspect of teleporting
     {
         playerGraphics.TransparentGraphics(); //set player model to be transparent
 
+        GameObject transparentWall;
+
         //draws line of where teleport will go || TODO add a little silloute thing where the player will end up
         teleportLineDraw.enabled = true;
         teleportLineDraw.SetPosition(0, controller.transform.position);
+
         RaycastHit hit;
         if (Physics.Raycast(controller.transform.position, controller.transform.forward, out hit, teleportDistance, ~teleportThruLayer))
         {
@@ -178,17 +189,15 @@ public class PlayerController : MonoBehaviour
             teleportLineDraw.SetPosition(1, controller.transform.position + (controller.transform.forward * teleportDistance));
         }
 
-        GameObject transparentWall;
-        //Make the wall we are looking to teleport thru transparent
-        if (Physics.Raycast(controller.transform.position, controller.transform.forward, out hit, teleportDistance, teleportThruLayer)) 
+       //Make the wall we are looking to teleport thru transparent
+        if (Physics.Raycast(controller.transform.position, controller.transform.forward, out hit, teleportDistance, ~playerAttackCollider)) 
         {
             transparentWall = hit.collider.gameObject;
-
-            if (transparentWall.GetComponent<TransparentWall>() != null)
+            if (transparentWall.gameObject.CompareTag("Teleportable"))
             {
                 transparentWall.GetComponent<TransparentWall>().Transparent();
             }
-     
+           
         }
       
 
@@ -244,23 +253,26 @@ public class PlayerController : MonoBehaviour
         gameObject.layer = LayerMask.NameToLayer("Player");
         UnFreezeMovement();
         teleportLineDraw.enabled = false;
+
+        StartCoroutine("StaminaRegenDelay");
     }
     void Stamina()
     {
         uIManager.UpdateUI(health, teleportStamina);
+
         if (isInvisible)
         {
-            teleportStamina -= Time.deltaTime * teleportStaminaDPS;
+            teleportStamina -= Time.deltaTime * teleportStaminaRegen;
             
         }
-        else if (teleportStamina < 100)
+        else if (teleportStamina < startingTeleportStamina && regenStamina)
         {
-            teleportStamina += Time.deltaTime * teleportStaminaDPS;
+            teleportStamina += Time.deltaTime * teleportStaminaRegen;
            
         }
-        else if (teleportStamina >= 100)
+        else if (teleportStamina >= startingTeleportStamina)
         {
-            teleportStamina = 100;
+            teleportStamina = startingTeleportStamina;
            
         }
 
@@ -268,11 +280,28 @@ public class PlayerController : MonoBehaviour
         {
             teleportStamina = 0;
             StopTeleport();
+            
         }
 
         
     }
    
+    void HealthRegen() 
+    {
+        uIManager.UpdateUI(health, teleportStamina);
+
+        if (isInvisible )
+        {
+            health += Time.deltaTime * healthRegen;
+        }
+        if (health >= 100)
+        {
+            health = 100;
+        }
+
+       
+    }
+
     void Attack()
     {
         if (Input.GetMouseButton(0))
@@ -304,6 +333,13 @@ public class PlayerController : MonoBehaviour
     {
         Initialize();
     }
+    IEnumerator StaminaRegenDelay()
+    {
+        regenStamina = false;
+        yield return new WaitForSeconds(staminaRegenDelay);
+        regenStamina = true;
+    }
+
     void FreezeMovement()
     {
         enableGravity = false;

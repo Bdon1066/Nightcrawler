@@ -475,11 +475,11 @@ MonoBehaviour:
   playerLocation: {fileID: 0}
   playerLayer:
     serializedVersion: 2
-    m_Bits: 64
+    m_Bits: 1024
   speed: 20
   gravityScale: 9
   sightDistance: 40
-  shootInterval: 5
+  shootInterval: 1
 --- !u!65 &6409636901833576954
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -881,6 +881,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   bullet: {fileID: 0}
+  bulletSpeed: 0
+  bulletSpawnPos: {fileID: 0}
 --- !u!1 &8924494040779258788
 GameObject:
   m_ObjectHideFlags: 0

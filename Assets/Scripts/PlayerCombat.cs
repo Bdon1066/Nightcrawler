@@ -25,7 +25,11 @@ public class PlayerCombat : MonoBehaviour
             if (collider.gameObject.CompareTag("Enemy"))
             {
                 Destroy(collider.gameObject);
-                Debug.Log("KILL");
+            }
+            if (collider.gameObject.CompareTag("President"))
+            {
+                Destroy(collider.gameObject);
+                pc.uIManager.GameOverScreen();
             }
         }
             

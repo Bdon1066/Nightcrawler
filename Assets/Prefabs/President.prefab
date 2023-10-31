@@ -427,7 +427,7 @@ GameObject:
   - component: {fileID: 2017520548125498701}
   m_Layer: 7
   m_Name: President
-  m_TagString: Enemy
+  m_TagString: President
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
