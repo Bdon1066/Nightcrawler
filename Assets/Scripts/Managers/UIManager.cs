@@ -7,21 +7,13 @@ using TMPro;
 public class UIManager : MonoBehaviour
 {
     [SerializeField] private TextMeshProUGUI healthText;
+    [SerializeField] private TextMeshProUGUI teleportStaminaText;
 
-    
-    // Start is called before the first frame update
-    void Start()
+    public void UpdateUI(float health,float teleportStamina)
     {
-        
-    }
-
-    // Update is called once per frame
-    void Update()
-    {
-        
-    }
-    public void UpdateHealth(float health)
-    {
+        health = Mathf.Round(health);
+        teleportStamina = Mathf.Round(teleportStamina);
         healthText.text = ("Health: " + health.ToString());
+        teleportStaminaText.text = ("Teleport Stamina: " + teleportStamina.ToString());
     }
 }

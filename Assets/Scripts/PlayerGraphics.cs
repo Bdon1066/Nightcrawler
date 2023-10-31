@@ -4,21 +4,40 @@ using UnityEngine;
 
 public class PlayerGraphics : MonoBehaviour
 {
-    // Start is called before the first frame update
-    void Start()
+    public Material transparent;
+    public Material blue;
+    public Material gold;
+    public Material brown;
+
+    public void TransparentGraphics()
     {
-        
+        GetComponent<MeshRenderer>().material = transparent;
+
+        foreach (Transform child in transform)
+        {
+            child.GetComponent<MeshRenderer>().material = transparent;
+        }
+
     }
-
-    // Update is called once per frame
-    void Update()
+    public void ResetGraphics()
     {
-        
-    }
+        GetComponent<MeshRenderer>().material = blue;
 
-    void TransparentPlayer()
-    {
-
+        foreach (Transform child in transform)
+        {
+            switch (child.tag)
+            {
+                case("Blue"):
+                    child.GetComponent<MeshRenderer>().material = blue;
+                    break;
+                case ("Brown"):
+                    child.GetComponent<MeshRenderer>().material = brown;
+                    break;
+                case ("Gold"):
+                    child.GetComponent<MeshRenderer>().material = gold;
+                    break;
+            }
+        }
 
     }
 }

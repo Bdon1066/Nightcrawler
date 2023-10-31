@@ -11,52 +11,67 @@ using static UnityEngine.UI.Image;
 public class PlayerController : MonoBehaviour
 {
     [Header("Refrences")]
-    public CharacterController controller;
-    public GameManager gameManager;
-    public UIManager uIManager;
-    public Animator animator;
-
-    public Transform camera;
-    public Transform  groundCheckPos;
-    public GameObject transparentPlayer;
-    public Transform playerSpawn;
-    public LayerMask groundLayer;
-    public LayerMask teleportThruLayer;
-    public LayerMask invisibleLayer;
+    [SerializeField] private CharacterController controller;
+    [SerializeField] private GameManager gameManager;
+    [SerializeField] private UIManager uIManager;
+    [SerializeField] private Animator animator;
+    [SerializeField] private PlayerGraphics playerGraphics;
+    [SerializeField] private Transform camera;
+    [SerializeField] private Transform  groundCheckPos;
+    [SerializeField] private GameObject transparentPlayer;
+    [SerializeField] private Transform playerSpawn;
+                     public LayerMask groundLayer;
+                     public LayerMask teleportThruLayer;
 
     [Header("Movement")]
-    public float speed = 12f;
-    public float sprintMultiplier = 1.2f;
-    public float gravityScale = 5f;
-    public float jumpSpeed = 10f;
-    private float ySpeed;
-    private bool isSprinting;
-    private bool enableGravity = true;
-    private bool enableMovement = true;
+    [SerializeField] private float speed = 20f;
+    [SerializeField] private float sprintMultiplier = 1.5f;
+    [SerializeField] private float gravityScale = 9f;
+    [SerializeField] private float jumpSpeed = 40f;
+                     private float ySpeed;
+                     private bool isSprinting;
+                     private bool enableGravity = true;
+                     private bool enableMovement = true;
 
     [Header("Teleporting")]
-    [SerializeField] private float startingTeleportDistance;
-                     private float teleportDistance;
+    [SerializeField] private float startingTeleportDistance;  
     [SerializeField] private float teleportSpeed;
-    private float teleportTime;
-    private Vector3 teleportTarget;
-    private bool isTeleporting;
-    [HideInInspector ]public bool isInvisible;
-    public LineRenderer teleportLineDraw;
-    [Header("Combat")]
-    public Transform combatHand;
-    public float startingHealth;
-    private float health;
+    [SerializeField] private float startingTeleportStamina = 100f;
+    [SerializeField] private float teleportStaminaDPS = 1f;
+                     private float teleportStamina;
+    [HideInInspector] public bool isInvisible;
+                     private float teleportDistance;
+                     private float teleportTime;
+                     private Vector3 teleportTarget;
+                     private bool isTeleporting;
+                     public LineRenderer teleportLineDraw;
 
- 
+    [Header("Combat")]
+    [SerializeField] private Transform combatHand;
+    [SerializeField] private float startingHealth;
+                     private float health;
+
+    //CAMERA
     private float turnSmoothTime = 0.1f;
     private float turnSmoothVelocity;
 
     private void Start()
     {
+        Initialize();
+    }
+    private void Initialize()
+    {
         health = startingHealth;
+        teleportStamina = startingTeleportStamina;
+        uIManager.UpdateUI(health, teleportStamina);
+
         teleportDistance = startingTeleportDistance;
         teleportLineDraw.enabled = false;
+
+        controller.enabled = false;
+        transform.position = playerSpawn.position;
+        transform.rotation = playerSpawn.rotation;
+        controller.enabled = true;
     }
     void Update() //for detecting inputs
     {
@@ -64,6 +79,7 @@ public class PlayerController : MonoBehaviour
         TeleportInput();
         Attack();
         Sprint();
+        StaminaDrain();
 
        
     }
@@ -81,12 +97,7 @@ public class PlayerController : MonoBehaviour
         Gravity();
 
     }
-    private void Gravity()
-    {
-        if (enableGravity){
-            ySpeed += Physics.gravity.y * gravityScale * Time.deltaTime;
-        }
-    }
+   
     private void Jump()
     {
         if (Input.GetButtonDown("Jump") && IsGrounded())
@@ -146,10 +157,13 @@ public class PlayerController : MonoBehaviour
             Teleport();
             
         }
+
+        // TO DO ADD UH YOU CANT TELEPORT UNLESS YOU HAVE ENOYGH STAMINAAAAAAAHSD98UWQ0D80QWUIDS[QWDI[WQ90[DWQ[D0-I[EQCIXHE87CY9-EWUC;
     }
     void TeleportGraphics() //handles graphical aspect of teleporting
     {
-       
+        playerGraphics.TransparentGraphics(); //set player model to be transparent
+
         GameObject transparentWall;
 
         //draws line of where teleport will go || TODO add a little silloute thing where the player will end up
@@ -160,20 +174,16 @@ public class PlayerController : MonoBehaviour
         if (Physics.Raycast(controller.transform.position, controller.transform.forward, out hit, teleportDistance, ~teleportThruLayer))
         {
             teleportLineDraw.SetPosition(1, hit.point);
-            
         }
         else
         {
             teleportLineDraw.SetPosition(1, controller.transform.position + (controller.transform.forward * teleportDistance));
-            
         }
 
        //Make the wall we are looking to teleport thru transparent
         if (Physics.Raycast(controller.transform.position, controller.transform.forward, out hit, teleportDistance, teleportThruLayer)) 
         {
-           
             transparentWall = hit.collider.gameObject;
-
             transparentWall.GetComponent<TransparentWall>().Transparent();
         }
       
@@ -211,40 +221,54 @@ public class PlayerController : MonoBehaviour
             transform.rotation = Quaternion.Euler(0f, angle, 0f);
 
             moveDir = Quaternion.Euler(0f, targetAngle, 0f) * Vector3.forward * teleportSpeed;
-
         }
-       
-        
+
         controller.Move(moveDir * Time.deltaTime);
         
         Invoke("StopTeleport", teleportTime - 0.01f);
-       
     }
   
     
     void StopTeleport()
     {
-
         controller.Move(Vector3.zero);
         isTeleporting = false;
+
         isInvisible = false;
+        playerGraphics.ResetGraphics();
+
         gameObject.layer = LayerMask.NameToLayer("Player");
         UnFreezeMovement();
         teleportLineDraw.enabled = false;
-
-
     }
-    void FreezeMovement()
+    void StaminaDrain()
     {
-        enableGravity = false;
-        enableMovement = false;
-       
+        uIManager.UpdateUI(health, teleportStamina);
+        if (isInvisible)
+        {
+            teleportStamina -= Time.deltaTime * teleportStaminaDPS;
+            
+        }
+        else if (teleportStamina < 100)
+        {
+            teleportStamina += Time.deltaTime * teleportStaminaDPS;
+           
+        }
+        else if (teleportStamina >= 100)
+        {
+            teleportStamina = 100;
+           
+        }
+
+        if (teleportStamina <= 0)
+        {
+            teleportStamina = 0;
+            StopTeleport();
+        }
+
+        
     }
-    void UnFreezeMovement()
-    {
-        enableGravity = true;
-        enableMovement = true;
-    }
+   
     void Attack()
     {
         if (Input.GetMouseButton(0))
@@ -259,15 +283,14 @@ public class PlayerController : MonoBehaviour
     }
     public void TakeDamage(float damageAmount)
     {
-        print("taking damage");
         health = health - damageAmount;
-        uIManager.UpdateHealth(health);
+        uIManager.UpdateUI(health,teleportStamina);
+
         if (health <= 0)
         {
             health = 0;
             Death();
         }
-        
     }
     private void Death()
     {
@@ -275,16 +298,27 @@ public class PlayerController : MonoBehaviour
     }
     private void Respawn()
     {
-        health = startingHealth;
-        uIManager.UpdateHealth(health);
+        Initialize();
+    }
+    void FreezeMovement()
+    {
+        enableGravity = false;
+        enableMovement = false;
 
-        controller.enabled = false;
-        transform.position = playerSpawn.position;
-        transform.rotation = playerSpawn.rotation;
-        controller.enabled = true;
+    }
+   void UnFreezeMovement()
+    {
+        enableGravity = true;
+        enableMovement = true;
     }
 
-
+    private void Gravity()
+    {
+        if (enableGravity)
+        {
+            ySpeed += Physics.gravity.y * gravityScale * Time.deltaTime;
+        }
+    }
     private bool IsGrounded()
     {
         if(Physics.CheckSphere(groundCheckPos.position, 0.4f, groundLayer))
