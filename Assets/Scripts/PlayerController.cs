@@ -14,11 +14,12 @@ public class PlayerController : MonoBehaviour
     [SerializeField] private CharacterController controller;
     [SerializeField] private GameManager gameManager;
     [SerializeField] public UIManager uIManager;
+    [Space(10)]
     [SerializeField] private Animator animator;
     [SerializeField] private PlayerGraphics playerGraphics;
     [SerializeField] private Transform camera;
     [SerializeField] private Transform  groundCheckPos;
-    [SerializeField] private GameObject transparentPlayer;
+    [SerializeField] private TransparentPlayerVFX transparentPlayerVFX;
     [SerializeField] private Transform playerSpawn;
     [Space(10)]
      public LayerMask groundLayer;
@@ -52,6 +53,7 @@ public class PlayerController : MonoBehaviour
      private bool isTeleporting;
     [Space(10)]
      public LineRenderer teleportLineDraw;
+     private bool spawnTransparentPlayer;
 
     [Header("Combat")]
     [SerializeField] private Transform combatHand;
@@ -187,6 +189,8 @@ public class PlayerController : MonoBehaviour
         else
         {
             teleportLineDraw.SetPosition(1, controller.transform.position + (controller.transform.forward * teleportDistance));
+            transparentPlayerVFX.Enable(teleportLineDraw.GetPosition(1), transform.rotation);
+            
         }
 
        //Make the wall we are looking to teleport thru transparent
@@ -203,6 +207,7 @@ public class PlayerController : MonoBehaviour
 
 
     }
+    
     void Teleport()
     {
         RaycastHit hit;
@@ -249,6 +254,7 @@ public class PlayerController : MonoBehaviour
 
         isInvisible = false;
         playerGraphics.ResetGraphics();
+        transparentPlayerVFX.Disable();
 
         gameObject.layer = LayerMask.NameToLayer("Player");
         UnFreezeMovement();
