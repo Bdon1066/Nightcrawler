@@ -1,6 +1,6 @@
 DESCRIPTION
 -----------------------------------------------------------------------------------
-You are Nightcrawler, a mutant who can teleport around amonst other stuff but thats
+You are Nightcrawler, a mutant who can teleport around amongst other stuff but thats
 all you can do in this game, that and punch people.
 Go kill the President! You'll know him when you see him.
 -----------------------------------------------------------------------------------
