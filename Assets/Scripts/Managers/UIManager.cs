@@ -1,6 +1,4 @@
 using System.Collections;
-using System.Collections.Generic;
-using UnityEngine.UI;
 using UnityEngine;
 using TMPro;
 
@@ -35,5 +33,11 @@ public class UIManager : MonoBehaviour
     public void GameOverScreen()
     {
         gameOver.gameObject.SetActive(true);
+        StartCoroutine("Outro");
+    }
+    IEnumerator Outro()
+    {
+        yield return new WaitForSeconds(5f);
+        Application.Quit();
     }
 }

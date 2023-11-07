@@ -1,10 +1,4 @@
-using System.Collections;
-using System.Collections.Generic;
-using Unity.VisualScripting;
 using UnityEngine;
-using UnityEngine.InputSystem.HID;
-using UnityEngine.UIElements;
-using static UnityEditor.PlayerSettings;
 
 public class EnemyController : MonoBehaviour
 {

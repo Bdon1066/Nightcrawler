@@ -12,5 +12,6 @@ HOW TO PLAY
 
 [LeftClick]- Click to Attack.
 [RightClick]- Hold to begin teleporting, release to complete.
+[Escape] - Close Game.
 -----------------------------------------------------------------------------------
 

@@ -1,30 +1,45 @@
+using UnityEngine;
 using System.Collections;
 using System.Collections.Generic;
-using UnityEngine;
 
 public class TransparentWall : MonoBehaviour
 {
     [Header("Material Refrences")]
     public Material OpaqueMaterial;
     public Material transparentMaterial;
-    private bool shouldBeTransparent = false;
-
-    public void Transparent()
+    private bool playerSignal;
+    private bool opaque;
+    public void SignalTransparent()
     {
-        this.GetComponent<MeshRenderer>().material = transparentMaterial;
-        shouldBeTransparent = true;
+        playerSignal = true;
     }
     private void Update()
     {
-        shouldBeTransparent = false;
-        if (!shouldBeTransparent)
+        if (!playerSignal)
+        {
+            opaque = true;
+        }
+        if (opaque && playerSignal)
+        {
+            ChangeMaterial();
+            opaque = false;
+        }
+        if (opaque)
         {
             Opaque();
         }
+        playerSignal = false;
+       
     }
     public void Opaque()
     {
-        this.GetComponent<MeshRenderer>().material = OpaqueMaterial;
+        GetComponent<MeshRenderer>().material = OpaqueMaterial;
     }
-
+    void ChangeMaterial()
+    {
+        GetComponent<MeshRenderer>().material = transparentMaterial;
+    }
 }
+
+
+

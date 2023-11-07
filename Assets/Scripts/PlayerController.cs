@@ -1,12 +1,5 @@
-using System;
 using System.Collections;
-using System.Collections.Generic;
-using System.Diagnostics;
-using Unity.VisualScripting;
 using UnityEngine;
-using UnityEngine.InputSystem.HID;
-using UnityEngine.LowLevel;
-using static UnityEngine.UI.Image;
 
 public class PlayerController : MonoBehaviour
 {
@@ -199,7 +192,7 @@ public class PlayerController : MonoBehaviour
             transparentWall = hit.collider.gameObject;
             if (transparentWall.gameObject.CompareTag("Teleportable"))
             {
-                transparentWall.GetComponent<TransparentWall>().Transparent();
+                transparentWall.GetComponent<TransparentWall>().SignalTransparent();
             }
            
         }
@@ -310,16 +303,12 @@ public class PlayerController : MonoBehaviour
 
     void Attack()
     {
-        if (Input.GetMouseButton(0))
+        if (Input.GetMouseButtonDown(0))
         {
-            animator.SetBool("isAttacking", true);
+            animator.SetTrigger("Attack");
         }
-        else
-        {
-            animator.SetBool("isAttacking", false);
-        }
-       
     }
+
     public void TakeDamage(float damageAmount)
     {
         health = health - damageAmount;
