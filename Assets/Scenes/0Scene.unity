@@ -372,7 +372,7 @@ GameObject:
   m_Component:
   - component: {fileID: 86552030}
   m_Layer: 0
-  m_Name: -------------------LEVEL------------------------
+  m_Name: ------------------ LEVEL -------------------------
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -3753,7 +3753,7 @@ GameObject:
   m_Component:
   - component: {fileID: 819627049}
   m_Layer: 0
-  m_Name: ------------------GAMEPLAY--------------------
+  m_Name: ------------------ GAMEPLAY --------------------
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -5004,8 +5004,8 @@ BoxCollider:
   m_ProvidesContacts: 0
   m_Enabled: 1
   serializedVersion: 3
-  m_Size: {x: 2.4306488, y: 2.0413742, z: 2.6140647}
-  m_Center: {x: -0.09593205, y: -0.019345952, z: 0.8070323}
+  m_Size: {x: 2.4306488, y: 2.9160614, z: 4.1340327}
+  m_Center: {x: -0.10478882, y: 0.040668488, z: -0.9337231}
 --- !u!114 &1031442577
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -6034,7 +6034,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1461022312}
   m_Layer: 0
-  m_Name: ------------------SYSTEM------------------------
+  m_Name: ------------------ SYSTEM -----------------------
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
