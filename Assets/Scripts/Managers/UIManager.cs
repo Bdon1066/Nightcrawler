@@ -1,43 +1,57 @@
 using System.Collections;
 using UnityEngine;
+using UnityEngine.UI;
 using TMPro;
 
 public class UIManager : MonoBehaviour
 {
     [SerializeField] private TextMeshProUGUI healthText;
+    [SerializeField] private Slider healthSlider;
+    [Space(10)]
     [SerializeField] private TextMeshProUGUI teleportStaminaText;
+    [SerializeField] private Slider teleportStaminaSlider;
+    [Space(10)]
+    [SerializeField] private TextMeshProUGUI timerText;
+    [Space(10)]
+    [SerializeField] private TextMeshProUGUI enemiesKilledText;
+    [SerializeField] private TextMeshProUGUI gameEndTimeText;
+    [Space(10)]
     [SerializeField] private GameObject objective;
     [SerializeField] private GameObject gameOver;
+    [SerializeField] private GameObject HUD;
+    [SerializeField] private GameObject timer;
+    private void Start()
+    {
+        teleportStaminaSlider.maxValue = 200; //hard coding this kinda sucks but cant be arsed wiring it up to the PC rn
+    }
 
-    public void UpdateUI(float health,float teleportStamina)
+    public void UpdateHUD(float health, float teleportStamina)
     {
         health = Mathf.Round(health);
         teleportStamina = Mathf.Round(teleportStamina);
-        healthText.text = ("Health: " + health.ToString());
-        teleportStaminaText.text = ("Teleport Stamina: " + teleportStamina.ToString());
+        healthText.text = ("HP " + health.ToString());
+        healthSlider.value = health;
+        teleportStaminaText.text = ("AP " + teleportStamina.ToString());
+        teleportStaminaSlider.value = teleportStamina;
     }
-    private void Start()
+    public void UpdateTimer(float time)
     {
-        StartCoroutine("Intro");
+        timerText.text = ("Time ") + time.ToString("0.00");
     }
+    
 
-    IEnumerator Intro()
-    {
-        yield return new WaitForSeconds(5f);
-        HideObjective();
-    }
-    void HideObjective()
+    public void HideObjective()
     {
         objective.gameObject.SetActive(false);
     }
-    public void GameOverScreen()
+    public void GameOverScreen(int enemiesKilled, float gameEndTime)
     {
         gameOver.gameObject.SetActive(true);
-        StartCoroutine("Outro");
-    }
-    IEnumerator Outro()
-    {
-        yield return new WaitForSeconds(5f);
-        Application.Quit();
+        HUD.gameObject.SetActive(false);
+        timer.gameObject.SetActive(false);
+        enemiesKilledText.text = ("Enemies Killed " + enemiesKilled.ToString());
+        gameEndTimeText.text = ("Time " + gameEndTime.ToString("0.00"));
+
     }
 }
+

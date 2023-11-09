@@ -5,8 +5,8 @@ public class PlayerController : MonoBehaviour
 {
     [Header("Refrences")]
     [SerializeField] private CharacterController controller;
-    [SerializeField] private GameManager gameManager;
-    [SerializeField] public UIManager uIManager;
+    [SerializeField] public GameManager gameManager;
+    [SerializeField] private UIManager uIManager;
     [Space(10)]
     [SerializeField] private Animator animator;
     [SerializeField] private PlayerGraphics playerGraphics;
@@ -67,7 +67,7 @@ public class PlayerController : MonoBehaviour
     {
         health = startingHealth;
         teleportStamina = startingTeleportStamina;
-        uIManager.UpdateUI(health, teleportStamina);
+        uIManager.UpdateHUD(health, teleportStamina);
 
         teleportDistance = startingTeleportDistance;
         teleportLineDraw.enabled = false;
@@ -257,7 +257,7 @@ public class PlayerController : MonoBehaviour
     }
     void Stamina()
     {
-        uIManager.UpdateUI(health, teleportStamina);
+        uIManager.UpdateHUD(health, teleportStamina);
 
         if (isInvisible)
         {
@@ -287,15 +287,15 @@ public class PlayerController : MonoBehaviour
    
     void HealthRegen() 
     {
-        uIManager.UpdateUI(health, teleportStamina);
+        uIManager.UpdateHUD(health, teleportStamina);
 
         if (isInvisible )
         {
             health += Time.deltaTime * healthRegen;
         }
-        if (health >= 100)
+        if (health >= startingHealth)
         {
-            health = 100;
+            health = startingHealth;
         }
 
        
@@ -312,7 +312,7 @@ public class PlayerController : MonoBehaviour
     public void TakeDamage(float damageAmount)
     {
         health = health - damageAmount;
-        uIManager.UpdateUI(health,teleportStamina);
+        uIManager.UpdateHUD(health,teleportStamina);
 
         if (health <= 0)
         {
@@ -320,7 +320,7 @@ public class PlayerController : MonoBehaviour
             Death();
         }
     }
-    private void Death()
+    public void Death()
     {
         Respawn();
     }

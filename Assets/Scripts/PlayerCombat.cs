@@ -3,6 +3,7 @@ using UnityEngine;
 public class PlayerCombat : MonoBehaviour
 {
     public PlayerController controllerScript;
+    public GameManager gameManager;
     public GameObject playerFist;
     private Animator pcAnimator;
     public LayerMask enemyLayer;
@@ -36,9 +37,11 @@ public class PlayerCombat : MonoBehaviour
    {
         if (enemy.CompareTag("President"))
         {
-            controllerScript.uIManager.GameOverScreen();
+            gameManager.EndGame();
         }
         Destroy(enemy.gameObject);
+        gameManager.enemiesKilled += 1;
+
    }
 
 

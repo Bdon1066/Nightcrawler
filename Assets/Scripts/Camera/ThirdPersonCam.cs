@@ -1,18 +1,20 @@
 using UnityEngine;
 
-public class ThirdPersonCam: MonoBehaviour
+public class ThirdPersonCam : MonoBehaviour
 {
     [Header("Settings")]
     [SerializeField] Transform lookAtPosition;
     [SerializeField] float cameraDistance;
-
+    [Space(10)]
     [SerializeField] float maxVerticalAngle;
     [SerializeField] float minVerticalAngle;
-
+    [Space(10)]
     [SerializeField] float horizontalRotationSpeed;
     [SerializeField] float verticalRotationSpeed;
-
+    [Space(10)]
     [SerializeField] Vector2 cameraOffset;
+    [Space(10)]
+    [SerializeField] bool invertCameraControls;
 
     float yRotation;
     float xRotation;
@@ -22,7 +24,10 @@ public class ThirdPersonCam: MonoBehaviour
     {
 
         yRotation += Input.GetAxis("Mouse X") * horizontalRotationSpeed;
-        xRotation += Input.GetAxis("Mouse Y") * verticalRotationSpeed;
+
+        if (invertCameraControls) { xRotation -= Input.GetAxis("Mouse Y") * verticalRotationSpeed; } //inverts vertical movement of camera
+        else { xRotation += Input.GetAxis("Mouse Y") * verticalRotationSpeed; }
+
         xRotation = Mathf.Clamp(xRotation, minVerticalAngle, maxVerticalAngle);
 
         var rotation = Quaternion.Euler(xRotation, yRotation, 0);
