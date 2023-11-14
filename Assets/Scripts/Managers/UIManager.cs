@@ -15,6 +15,7 @@ public class UIManager : MonoBehaviour
     [Space(10)]
     [SerializeField] private TextMeshProUGUI enemiesKilledText;
     [SerializeField] private TextMeshProUGUI gameEndTimeText;
+    [SerializeField] private TextMeshProUGUI noOfDeathsText;
     [Space(10)]
     [SerializeField] private GameObject objective;
     [SerializeField] private GameObject gameOver;
@@ -44,13 +45,14 @@ public class UIManager : MonoBehaviour
     {
         objective.gameObject.SetActive(false);
     }
-    public void GameOverScreen(int enemiesKilled, float gameEndTime)
+    public void GameOverScreen(int enemiesKilled, float gameEndTime,int noOfDeaths)
     {
         gameOver.gameObject.SetActive(true);
         HUD.gameObject.SetActive(false);
         timer.gameObject.SetActive(false);
         enemiesKilledText.text = ("Enemies Killed " + enemiesKilled.ToString());
         gameEndTimeText.text = ("Time " + gameEndTime.ToString("0.00"));
+        noOfDeathsText.text = ("Deaths " + noOfDeaths.ToString());
 
     }
 }

@@ -1,0 +1,16 @@
+Timestamp,UserID,Event Name,UUID,Param/enemiesKilled,Param/gameTime,Param/noOfDeaths,Param/noOfTeleports,Param/noOfShotTaken,Param/overallDamageTaken,Param/deathLocation,Param/gameTimeAtDeath,Param/causeOfDeath
+14/11/2023 15:16:30,Test,playerStats,687c31195aa19a9500b4ab4328324787,18,40.3392372,0,75,13,195,,,
+14/11/2023 15:18:48,test,playerStats,5faeeada30647d310817e4166a35e415,14,71.50168,2,160,32,480,,,
+14/11/2023 15:21:51,Bruh,playerStats,707e3a66b66946b0ad25bb0dd5264ed1,17,60.5069427,0,20,10,150,,,
+14/11/2023 15:36:10,test,PlayerDeath,979207c668487d24132a907d7c1ce2bc,,,,,,,x -0.3520193y 2.383224z -0.123173,4.77466536,Shot to death.
+14/11/2023 15:36:16,test,PlayerDeath,a5b1700437e8016e734759915211d7a8,,,,,,,x -13.85706y 2.383224z 5.577736,11.1355324,Shot to death.
+14/11/2023 15:43:13,testing,PlayerDeath,d3241475476ac15fc293829a9bb08d4e,,,,,,,x -5.459258 y 2.383224 z 17.68872,9.199049,Shot to death.
+14/11/2023 15:43:37,testing,PlayerDeath,05aa3cee5a64894a289cf240d90881fd,,,,,,,x -21.244 y 2.383225 z 491.5244,33.099205,Shot to death.
+14/11/2023 15:43:53,testing,playerStats,4f596d26987ef7430149bd849b97de16,18,49.33707,2,36,20,300,,,
+14/11/2023 15:47:26,testo,PlayerDeath,21d5e9e32876c1efb53ba42890844c1f,,,,,,,x 4.377366 y 2.383224 z 15.62437,6.766867,Shot to death.
+14/11/2023 15:47:34,testo,PlayerDeath,122477c21ba96d7f9a14bad11532d97c,,,,,,,x 21.49912 y 2.383224 z 1.402549,14.605917,Shot to death.
+14/11/2023 17:13:54,NULL,playerStats,03808a10a4bc1322d4730b646e6182c4,2,294.259766,0,26,7,105,,,
+14/11/2023 17:13:56,NULL,PlayerDeath,d6a12210cde6d88cfa70600b4af2e584,,,,,,,x -3.556323 y 2.383224 z 514.0293,294.259766,Shot to death.
+14/11/2023 18:05:40,NULL,PlayerDeath,9914f878bad66a5600b881a1864042e7,,,,,,,x 90.24718 y -52.00341 z -36.51821,6.098609,Fell off the world.
+14/11/2023 18:08:46,NULL,PlayerDeath,27582e0ee6aa085667981a6b97e4df0a,,,,,,,x -77.08336 y -51.53646 z -91.48623,11.2596283,Fell off the world.
+14/11/2023 18:13:53,NULL,PlayerDeath,e0d16a96eb47655a4f828d6a691ad0ce,,,,,,,x -20.939 y -58.43151 z -97.97048,10.47777,Fell off the world.

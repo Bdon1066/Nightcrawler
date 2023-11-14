@@ -8,7 +8,7 @@ public class FallOffPoint : MonoBehaviour
     {
         if (collider.gameObject.CompareTag("Player"))
         {
-            collider.gameObject.GetComponent<PlayerController>().Death();
+            collider.gameObject.GetComponent<PlayerController>().Death("Fell off the world.");
             print("fall off");
         }
     }

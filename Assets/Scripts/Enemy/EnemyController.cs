@@ -1,4 +1,5 @@
 using UnityEngine;
+using UnityEngine.InputSystem.XR;
 
 public class EnemyController : MonoBehaviour
 {
@@ -40,8 +41,8 @@ public class EnemyController : MonoBehaviour
     {
         RaycastHit hit;
         Vector3 direction = (playerLocation.position - this.transform.position).normalized;
-
-       if( Physics.Raycast(controller.transform.position, direction, out hit, sightDistance, ~playerLayer))
+        Vector3 eyePosition = (controller.transform.position) + new Vector3(0, 1, 0);
+       if( Physics.Raycast(eyePosition, direction, out hit, sightDistance, ~playerLayer))
        {
             if (hit.collider.gameObject.CompareTag("Player") && !player.isInvisible)
             {

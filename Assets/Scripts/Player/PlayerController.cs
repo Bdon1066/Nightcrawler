@@ -1,5 +1,9 @@
+using Abertay.Analytics;
+using System;
 using System.Collections;
+using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.EventSystems;
 
 public class PlayerController : MonoBehaviour
 {
@@ -46,7 +50,8 @@ public class PlayerController : MonoBehaviour
      private bool isTeleporting;
     [Space(10)]
      public LineRenderer teleportLineDraw;
-     private bool spawnTransparentPlayer;
+    [SerializeField] private TeleportHeatmap heatmap;
+    private bool spawnTransparentPlayer;
 
     [Header("Combat")]
     [SerializeField] private Transform combatHand;
@@ -58,6 +63,10 @@ public class PlayerController : MonoBehaviour
     //CAMERA
     private float turnSmoothTime = 0.1f;
     private float turnSmoothVelocity;
+
+    //HEATMAP SHENINEGANS
+    bool heatmapStartTrigger;
+    bool heatmapEndTrigger;
 
     private void Start()
     {
@@ -173,6 +182,7 @@ public class PlayerController : MonoBehaviour
         //draws line of where teleport will go || TODO add a little silloute thing where the player will end up
         teleportLineDraw.enabled = true;
         teleportLineDraw.SetPosition(0, controller.transform.position);
+        heatmap.HeatmapStart(controller.transform.position);
 
         RaycastHit hit;
         if (Physics.Raycast(controller.transform.position, controller.transform.forward, out hit, teleportDistance, ~teleportThruLayer))
@@ -214,6 +224,7 @@ public class PlayerController : MonoBehaviour
         else
         {
             teleportTarget = controller.transform.forward * teleportDistance;
+            heatmap.HeatmapEnd(controller.transform.forward * teleportDistance);
             isTeleporting = true;
         }
     }
@@ -235,7 +246,6 @@ public class PlayerController : MonoBehaviour
         }
 
         controller.Move(moveDir * Time.deltaTime);
-        
         Invoke("StopTeleport", teleportTime - 0.01f);
     }
   
@@ -244,7 +254,9 @@ public class PlayerController : MonoBehaviour
     {
         controller.Move(Vector3.zero);
         isTeleporting = false;
-
+        gameManager.noOfTeleports++;
+        print(gameManager.noOfTeleports);
+        
         isInvisible = false;
         playerGraphics.ResetGraphics();
         transparentPlayerVFX.Disable();
@@ -255,6 +267,10 @@ public class PlayerController : MonoBehaviour
 
         StartCoroutine("StaminaRegenDelay");
     }
+   
+
+
+
     void Stamina()
     {
         uIManager.UpdateHUD(health, teleportStamina);
@@ -311,17 +327,31 @@ public class PlayerController : MonoBehaviour
 
     public void TakeDamage(float damageAmount)
     {
+        gameManager.noOfShotTaken++;
+        gameManager.overallDamageTaken += damageAmount;
+
         health = health - damageAmount;
         uIManager.UpdateHUD(health,teleportStamina);
 
         if (health <= 0)
         {
             health = 0;
-            Death();
+            Death("Shot to death.");
         }
     }
-    public void Death()
+    public void Death(string deathCause)
     {
+        gameManager.noOfDeaths++;
+        Dictionary<string, object> data = new Dictionary<string, object>();
+        var x = controller.transform.position.x;
+        var y = controller.transform.position.y;
+        var z = controller.transform.position.z;
+        string deathLocationCoOrds = ("x "+ x + " y " + y + " z " + z);
+        data.Add("deathLocation", deathLocationCoOrds);
+        data.Add("gameTimeAtDeath", gameManager.gameTime);
+        data.Add("causeOfDeath", deathCause);
+        AnalyticsManager.SendCustomEvent("PlayerDeath", data);
+        AnalyticsManager.LogHeatmapEvent("PlayerDeath", controller.transform.position, Color.red);
         Respawn();
     }
     private void Respawn()
