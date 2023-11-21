@@ -10,11 +10,12 @@ public class Gun : MonoBehaviour
     public void FireBullet(Transform target)
     {
        spawnedBullet = Instantiate(bullet, transform.position + bulletSpawnPos.position, Quaternion.identity);
+       spawnedBullet.name = (transform.parent.name + "'s Bullet");
        spawnedBullet.transform.position = bulletSpawnPos.position;
        spawnedBullet.transform.LookAt(target);
        spawnedBullet.GetComponent<Rigidbody>().AddForce(spawnedBullet.transform.forward * bulletSpeed, ForceMode.Impulse);
 
-       StartCoroutine(DestroyBullet(spawnedBullet, 1f));
+       StartCoroutine(DestroyBullet(spawnedBullet, 2f));
     }
     private IEnumerator DestroyBullet(GameObject projectile, float delay)
     {

@@ -1,50 +1,5 @@
-Timestamp,UserID,Event Name,UUID,Param/enemiesKilled,Param/gameTime,Param/noOfDeaths,Param/noOfTeleports,Param/noOfShotTaken,Param/overallDamageTaken,Param/deathLocation,Param/gameTimeAtDeath,Param/causeOfDeath
-14/11/2023 15:16:30,Test,playerStats,687c31195aa19a9500b4ab4328324787,18,40.3392372,0,75,13,195,,,
-14/11/2023 15:18:48,test,playerStats,5faeeada30647d310817e4166a35e415,14,71.50168,2,160,32,480,,,
-14/11/2023 15:21:51,Bruh,playerStats,707e3a66b66946b0ad25bb0dd5264ed1,17,60.5069427,0,20,10,150,,,
-14/11/2023 15:36:10,test,PlayerDeath,979207c668487d24132a907d7c1ce2bc,,,,,,,x -0.3520193y 2.383224z -0.123173,4.77466536,Shot to death.
-14/11/2023 15:36:16,test,PlayerDeath,a5b1700437e8016e734759915211d7a8,,,,,,,x -13.85706y 2.383224z 5.577736,11.1355324,Shot to death.
-14/11/2023 15:43:13,testing,PlayerDeath,d3241475476ac15fc293829a9bb08d4e,,,,,,,x -5.459258 y 2.383224 z 17.68872,9.199049,Shot to death.
-14/11/2023 15:43:37,testing,PlayerDeath,05aa3cee5a64894a289cf240d90881fd,,,,,,,x -21.244 y 2.383225 z 491.5244,33.099205,Shot to death.
-14/11/2023 15:43:53,testing,playerStats,4f596d26987ef7430149bd849b97de16,18,49.33707,2,36,20,300,,,
-14/11/2023 15:47:26,testo,PlayerDeath,21d5e9e32876c1efb53ba42890844c1f,,,,,,,x 4.377366 y 2.383224 z 15.62437,6.766867,Shot to death.
-14/11/2023 15:47:34,testo,PlayerDeath,122477c21ba96d7f9a14bad11532d97c,,,,,,,x 21.49912 y 2.383224 z 1.402549,14.605917,Shot to death.
-14/11/2023 17:13:54,NULL,playerStats,03808a10a4bc1322d4730b646e6182c4,2,294.259766,0,26,7,105,,,
-14/11/2023 17:13:56,NULL,PlayerDeath,d6a12210cde6d88cfa70600b4af2e584,,,,,,,x -3.556323 y 2.383224 z 514.0293,294.259766,Shot to death.
-14/11/2023 18:05:40,NULL,PlayerDeath,9914f878bad66a5600b881a1864042e7,,,,,,,x 90.24718 y -52.00341 z -36.51821,6.098609,Fell off the world.
-14/11/2023 18:08:46,NULL,PlayerDeath,27582e0ee6aa085667981a6b97e4df0a,,,,,,,x -77.08336 y -51.53646 z -91.48623,11.2596283,Fell off the world.
-14/11/2023 18:13:53,NULL,PlayerDeath,e0d16a96eb47655a4f828d6a691ad0ce,,,,,,,x -20.939 y -58.43151 z -97.97048,10.4777718,Fell off the world.
-21/11/2023 13:51:48,NULL,PlayerDeath,d6dbb4bd6c732f310acbed37d7d45ce6,,,,,,,x -3.267282 y 2.383224 z 0.3570757,4.71640873,Shot to death.
-21/11/2023 13:51:49,NULL,PlayerDeath,3de88b9fbf59c6a1078f1cae123ffa29,,,,,,,x -3.267282 y 2.383224 z 0.3570757,5.25801134,Shot to death.
-21/11/2023 13:51:49,NULL,PlayerDeath,3de88b9fbf59c6a1078f1cae123ffa29,,,,,,,x -3.267282 y 2.383224 z 0.3570757,5.2628684,Shot to death.
-21/11/2023 13:51:49,NULL,PlayerDeath,3de88b9fbf59c6a1078f1cae123ffa29,,,,,,,x -3.267282 y 2.383224 z 0.3570757,5.7981143,Shot to death.
-21/11/2023 13:51:50,NULL,PlayerDeath,aa7bca63b7ea26b9c54cb7f0660a0b4f,,,,,,,x -3.267282 y 2.383224 z 0.3570757,6.338342,Shot to death.
-21/11/2023 13:51:50,NULL,PlayerDeath,aa7bca63b7ea26b9c54cb7f0660a0b4f,,,,,,,x -3.267282 y 2.383224 z 0.3570757,6.342945,Shot to death.
-21/11/2023 13:51:50,NULL,PlayerDeath,aa7bca63b7ea26b9c54cb7f0660a0b4f,,,,,,,x -3.267282 y 2.383224 z 0.3570757,6.87676668,Shot to death.
-21/11/2023 13:51:51,NULL,PlayerDeath,0e86cc7d8c2fb1d883cefbfdd0554583,,,,,,,x -3.267282 y 2.383224 z 0.3570757,7.4181,Shot to death.
-21/11/2023 13:51:51,NULL,PlayerDeath,0e86cc7d8c2fb1d883cefbfdd0554583,,,,,,,x -3.267282 y 2.383224 z 0.3570757,7.42205572,Shot to death.
-21/11/2023 13:51:51,NULL,PlayerDeath,0e86cc7d8c2fb1d883cefbfdd0554583,,,,,,,x -3.267282 y 2.383224 z 0.3570757,7.957986,Shot to death.
-21/11/2023 13:51:52,NULL,PlayerDeath,eef975b5573526618662da0987e99390,,,,,,,x -3.267282 y 2.383224 z 0.3570757,8.478805,Shot to death.
-21/11/2023 13:51:52,NULL,PlayerDeath,eef975b5573526618662da0987e99390,,,,,,,x -3.267282 y 2.383224 z 0.3570757,8.484121,Shot to death.
-21/11/2023 13:51:52,NULL,PlayerDeath,eef975b5573526618662da0987e99390,,,,,,,x -3.267282 y 2.383224 z 0.3570757,9.038218,Shot to death.
-21/11/2023 13:51:53,NULL,PlayerDeath,d29bf6dfb40297cd4c2b302f298f37e8,,,,,,,x -3.267282 y 2.383224 z 0.3570757,9.517428,Shot to death.
-21/11/2023 13:51:53,NULL,PlayerDeath,d29bf6dfb40297cd4c2b302f298f37e8,,,,,,,x -3.267282 y 2.383224 z 0.3570757,9.52085,Shot to death.
-21/11/2023 13:52:17,NULL,PlayerDeath,029581136c0f0dc8974c521d465700ae,,,,,,,x -6.869202 y 2.383224 z 1.584879,5.57655334,Shot to death.
-21/11/2023 13:52:23,NULL,PlayerDeath,48fa644704a4e29ef8e7674c3b168de1,,,,,,,x -7.342398 y 2.383224 z 3.453686,6.5644145,Shot to death.
-21/11/2023 13:52:28,NULL,PlayerDeath,bc7b3c172bb4ecac3389b62dabb8ba0a,,,,,,,x -11.35161 y 2.383224 z 4.302438,4.96802,Shot to death.
-21/11/2023 13:52:33,NULL,PlayerDeath,69a1ce2140cb8389fd98aa8af5abd732,,,,,,,x -9.491963 y 2.383224 z 2.951161,5.005424,Shot to death.
-21/11/2023 13:52:38,NULL,PlayerDeath,5cb7c96724a4eb18e8b3b680c384e727,,,,,,,x -8.880398 y 2.383224 z -3.257917,4.650018,Shot to death.
-21/11/2023 13:52:42,NULL,PlayerDeath,068fe2b46d519630dff49a25508c8cb2,,,,,,,x -6.400307 y 2.383224 z -1.464465,5.00963259,Shot to death.
-21/11/2023 13:52:47,NULL,PlayerDeath,08fe7bd3382d845afa2ddc8760a45bde,,,,,,,x -8.764651 y 2.383224 z 1.925229,5.01691675,Shot to death.
-21/11/2023 13:57:08,NULL,playerStats,4ad4d30088383a2ce50a0bec7e53e0b7,18,57.9789162,0,18,14,210,,,
-21/11/2023 14:04:58,NULL,playerStats,9357236fc2d4048c633005a102f39d10,11,45.3176537,0,16,9,135,,,
-21/11/2023 14:13:42,NULL,playerStats,50ea1b518c50c160290cb1af6f8e3c67,18,38.8165436,0,50,11,165,,,
-21/11/2023 14:16:17,NULL,PlayerDeath,102d281104ee2b35dab4779504590102,,,,,,,x 3.195981 y 2.383225 z 11.70708,34.27691,Shot to death.
-21/11/2023 14:35:46,NULL,PlayerDeath,d090b17ce923bb1f200e237c1444b8aa,,,,,,,x -14.59392 y 2.383224 z 10.14356,6.23644972,Shot to death.
-21/11/2023 14:36:21,NULL,PlayerDeath,11687f94de4a69bd807ddac3ea9843dc,,,,,,,x -10.78591 y 2.383224 z 3.020647,7.657836,Shot to death.
-21/11/2023 14:38:26,NULL,PlayerDeath,b4bc049f6a770ffc032a26c30673406e,,,,,,,x 17.28492 y 2.383225 z 3.413803,7.619469,Shot to death.
-21/11/2023 14:38:34,NULL,PlayerDeath,5b8803ea53a5857dc87878ec77ed4a43,,,,,,,x -8.978855 y 2.383224 z -8.756127,7.95942831,Shot to death.
-21/11/2023 14:40:51,NULL,PlayerDeath,eea91be7bdca90cc473e59bbf08e4ca1,,,,,,,x -4.697979 y 2.383224 z 5.651933,43.317337,Shot to death.
-21/11/2023 14:42:42,NULL,playerStats,c684b5515ce98f623fb5a0f0b142d8fc,15,111.402252,1,121,23,345,,,
-21/11/2023 14:50:11,NULL,PlayerDeath,d4958c2dc7a6104dca19269b6478191c,,,,,,,x -7.470922 y 2.383224 z 11.09483,6.05660725,Shot to death.
-21/11/2023 14:50:48,NULL,playerStats,34dd6f9d484e2fdd67455ba794eb5d44,19,36.68302,1,12,20,300,,,
+Timestamp,UserID,Event Name,UUID,Param/wonGame,Param/causeOfDeath,Param/deathLocation,Param/enemiesKilled,Param/gameTime,Param/noOfDeaths,Param/overallDamageTaken,Param/noOfTeleports,Param/timeTillfirstTeleport,Param/avgTimeSpentTeleporting
+21/11/2023 17:53:33,NULL,runEnded,8c9fa7cd7f99cae3d92b87770cf6378e,False,Enemy (6)'s Bullet,Room3,6,15.98,1,135,6,0.61,0.21
+21/11/2023 17:54:00,NULL,runEnded,6b698666602ae8d3f4f0a5742d173a5b,True,,,23,26.64,1,240,23,1.88,0.199999988
+21/11/2023 18:00:56,Test,runEnded,8a9c083f8b05a25e5e2be98bc5c1be06,False,Enemy (7)'s Bullet,Room3,7,14.9699993,1,150,10,1.22,0.179999992
+21/11/2023 18:01:24,Test,runEnded,a090409a3061d81bb3e2040dd749f079,True,,,17,27.82,1,315,28,0.82,0.19

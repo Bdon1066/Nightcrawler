@@ -1,620 +1,74 @@
 [
   {
-    "eventTimestamp": "14/11/2023 15:16:30",
+    "eventTimestamp": "21/11/2023 17:53:33",
+    "userID": "NULL",
+    "eventName": "runEnded",
+    "eventUUID": "8c9fa7cd7f99cae3d92b87770cf6378e",
+    "GA_Value": 0.0,
+    "eventParams": {
+      "wonGame": false,
+      "causeOfDeath": "Enemy (6)'s Bullet",
+      "deathLocation": "Room3",
+      "enemiesKilled": 6,
+      "gameTime": 15.98,
+      "noOfDeaths": 1,
+      "overallDamageTaken": 135.0,
+      "noOfTeleports": 6,
+      "timeTillfirstTeleport": 0.61,
+      "avgTimeSpentTeleporting": 0.21
+    }
+  },
+  {
+    "eventTimestamp": "21/11/2023 17:54:00",
+    "userID": "NULL",
+    "eventName": "runEnded",
+    "eventUUID": "6b698666602ae8d3f4f0a5742d173a5b",
+    "GA_Value": 0.0,
+    "eventParams": {
+      "wonGame": true,
+      "enemiesKilled": 23,
+      "gameTime": 26.64,
+      "noOfDeaths": 1,
+      "overallDamageTaken": 240.0,
+      "noOfTeleports": 23,
+      "timeTillfirstTeleport": 1.88,
+      "avgTimeSpentTeleporting": 0.199999988
+    }
+  },
+  {
+    "eventTimestamp": "21/11/2023 18:00:56",
     "userID": "Test",
-    "eventName": "playerStats",
-    "eventUUID": "687c31195aa19a9500b4ab4328324787",
+    "eventName": "runEnded",
+    "eventUUID": "8a9c083f8b05a25e5e2be98bc5c1be06",
     "GA_Value": 0.0,
     "eventParams": {
-      "enemiesKilled": 18,
-      "gameTime": 40.3392372,
-      "noOfDeaths": 0,
-      "noOfTeleports": 75,
-      "noOfShotTaken": 13,
-      "overallDamageTaken": 195.0
+      "wonGame": false,
+      "causeOfDeath": "Enemy (7)'s Bullet",
+      "deathLocation": "Room3",
+      "enemiesKilled": 7,
+      "gameTime": 14.9699993,
+      "noOfDeaths": 1,
+      "overallDamageTaken": 150.0,
+      "noOfTeleports": 10,
+      "timeTillfirstTeleport": 1.22,
+      "avgTimeSpentTeleporting": 0.179999992
     }
   },
   {
-    "eventTimestamp": "14/11/2023 15:18:48",
-    "userID": "test",
-    "eventName": "playerStats",
-    "eventUUID": "5faeeada30647d310817e4166a35e415",
+    "eventTimestamp": "21/11/2023 18:01:24",
+    "userID": "Test",
+    "eventName": "runEnded",
+    "eventUUID": "a090409a3061d81bb3e2040dd749f079",
     "GA_Value": 0.0,
     "eventParams": {
-      "enemiesKilled": 14,
-      "gameTime": 71.50168,
-      "noOfDeaths": 2,
-      "noOfTeleports": 160,
-      "noOfShotTaken": 32,
-      "overallDamageTaken": 480.0
-    }
-  },
-  {
-    "eventTimestamp": "14/11/2023 15:21:51",
-    "userID": "Bruh",
-    "eventName": "playerStats",
-    "eventUUID": "707e3a66b66946b0ad25bb0dd5264ed1",
-    "GA_Value": 0.0,
-    "eventParams": {
+      "wonGame": true,
       "enemiesKilled": 17,
-      "gameTime": 60.5069427,
-      "noOfDeaths": 0,
-      "noOfTeleports": 20,
-      "noOfShotTaken": 10,
-      "overallDamageTaken": 150.0
-    }
-  },
-  {
-    "eventTimestamp": "14/11/2023 15:36:10",
-    "userID": "test",
-    "eventName": "PlayerDeath",
-    "eventUUID": "979207c668487d24132a907d7c1ce2bc",
-    "GA_Value": 0.0,
-    "eventParams": {
-      "deathLocation": "x -0.3520193y 2.383224z -0.123173",
-      "gameTimeAtDeath": 4.77466536,
-      "causeOfDeath": "Shot to death."
-    }
-  },
-  {
-    "eventTimestamp": "14/11/2023 15:36:16",
-    "userID": "test",
-    "eventName": "PlayerDeath",
-    "eventUUID": "a5b1700437e8016e734759915211d7a8",
-    "GA_Value": 0.0,
-    "eventParams": {
-      "deathLocation": "x -13.85706y 2.383224z 5.577736",
-      "gameTimeAtDeath": 11.1355324,
-      "causeOfDeath": "Shot to death."
-    }
-  },
-  {
-    "eventTimestamp": "14/11/2023 15:43:13",
-    "userID": "testing",
-    "eventName": "PlayerDeath",
-    "eventUUID": "d3241475476ac15fc293829a9bb08d4e",
-    "GA_Value": 0.0,
-    "eventParams": {
-      "deathLocation": "x -5.459258 y 2.383224 z 17.68872",
-      "gameTimeAtDeath": 9.199049,
-      "causeOfDeath": "Shot to death."
-    }
-  },
-  {
-    "eventTimestamp": "14/11/2023 15:43:37",
-    "userID": "testing",
-    "eventName": "PlayerDeath",
-    "eventUUID": "05aa3cee5a64894a289cf240d90881fd",
-    "GA_Value": 0.0,
-    "eventParams": {
-      "deathLocation": "x -21.244 y 2.383225 z 491.5244",
-      "gameTimeAtDeath": 33.099205,
-      "causeOfDeath": "Shot to death."
-    }
-  },
-  {
-    "eventTimestamp": "14/11/2023 15:43:53",
-    "userID": "testing",
-    "eventName": "playerStats",
-    "eventUUID": "4f596d26987ef7430149bd849b97de16",
-    "GA_Value": 0.0,
-    "eventParams": {
-      "enemiesKilled": 18,
-      "gameTime": 49.33707,
-      "noOfDeaths": 2,
-      "noOfTeleports": 36,
-      "noOfShotTaken": 20,
-      "overallDamageTaken": 300.0
-    }
-  },
-  {
-    "eventTimestamp": "14/11/2023 15:47:26",
-    "userID": "testo",
-    "eventName": "PlayerDeath",
-    "eventUUID": "21d5e9e32876c1efb53ba42890844c1f",
-    "GA_Value": 0.0,
-    "eventParams": {
-      "deathLocation": "x 4.377366 y 2.383224 z 15.62437",
-      "gameTimeAtDeath": 6.766867,
-      "causeOfDeath": "Shot to death."
-    }
-  },
-  {
-    "eventTimestamp": "14/11/2023 15:47:34",
-    "userID": "testo",
-    "eventName": "PlayerDeath",
-    "eventUUID": "122477c21ba96d7f9a14bad11532d97c",
-    "GA_Value": 0.0,
-    "eventParams": {
-      "deathLocation": "x 21.49912 y 2.383224 z 1.402549",
-      "gameTimeAtDeath": 14.605917,
-      "causeOfDeath": "Shot to death."
-    }
-  },
-  {
-    "eventTimestamp": "14/11/2023 17:13:54",
-    "userID": "NULL",
-    "eventName": "playerStats",
-    "eventUUID": "03808a10a4bc1322d4730b646e6182c4",
-    "GA_Value": 0.0,
-    "eventParams": {
-      "enemiesKilled": 2,
-      "gameTime": 294.259766,
-      "noOfDeaths": 0,
-      "noOfTeleports": 26,
-      "noOfShotTaken": 7,
-      "overallDamageTaken": 105.0
-    }
-  },
-  {
-    "eventTimestamp": "14/11/2023 17:13:56",
-    "userID": "NULL",
-    "eventName": "PlayerDeath",
-    "eventUUID": "d6a12210cde6d88cfa70600b4af2e584",
-    "GA_Value": 0.0,
-    "eventParams": {
-      "deathLocation": "x -3.556323 y 2.383224 z 514.0293",
-      "gameTimeAtDeath": 294.259766,
-      "causeOfDeath": "Shot to death."
-    }
-  },
-  {
-    "eventTimestamp": "14/11/2023 18:05:40",
-    "userID": "NULL",
-    "eventName": "PlayerDeath",
-    "eventUUID": "9914f878bad66a5600b881a1864042e7",
-    "GA_Value": 0.0,
-    "eventParams": {
-      "deathLocation": "x 90.24718 y -52.00341 z -36.51821",
-      "gameTimeAtDeath": 6.098609,
-      "causeOfDeath": "Fell off the world."
-    }
-  },
-  {
-    "eventTimestamp": "14/11/2023 18:08:46",
-    "userID": "NULL",
-    "eventName": "PlayerDeath",
-    "eventUUID": "27582e0ee6aa085667981a6b97e4df0a",
-    "GA_Value": 0.0,
-    "eventParams": {
-      "deathLocation": "x -77.08336 y -51.53646 z -91.48623",
-      "gameTimeAtDeath": 11.2596283,
-      "causeOfDeath": "Fell off the world."
-    }
-  },
-  {
-    "eventTimestamp": "14/11/2023 18:13:53",
-    "userID": "NULL",
-    "eventName": "PlayerDeath",
-    "eventUUID": "e0d16a96eb47655a4f828d6a691ad0ce",
-    "GA_Value": 0.0,
-    "eventParams": {
-      "deathLocation": "x -20.939 y -58.43151 z -97.97048",
-      "gameTimeAtDeath": 10.4777718,
-      "causeOfDeath": "Fell off the world."
-    }
-  },
-  {
-    "eventTimestamp": "21/11/2023 13:51:48",
-    "userID": "NULL",
-    "eventName": "PlayerDeath",
-    "eventUUID": "d6dbb4bd6c732f310acbed37d7d45ce6",
-    "GA_Value": 0.0,
-    "eventParams": {
-      "deathLocation": "x -3.267282 y 2.383224 z 0.3570757",
-      "gameTimeAtDeath": 4.71640873,
-      "causeOfDeath": "Shot to death."
-    }
-  },
-  {
-    "eventTimestamp": "21/11/2023 13:51:49",
-    "userID": "NULL",
-    "eventName": "PlayerDeath",
-    "eventUUID": "3de88b9fbf59c6a1078f1cae123ffa29",
-    "GA_Value": 0.0,
-    "eventParams": {
-      "deathLocation": "x -3.267282 y 2.383224 z 0.3570757",
-      "gameTimeAtDeath": 5.25801134,
-      "causeOfDeath": "Shot to death."
-    }
-  },
-  {
-    "eventTimestamp": "21/11/2023 13:51:49",
-    "userID": "NULL",
-    "eventName": "PlayerDeath",
-    "eventUUID": "3de88b9fbf59c6a1078f1cae123ffa29",
-    "GA_Value": 0.0,
-    "eventParams": {
-      "deathLocation": "x -3.267282 y 2.383224 z 0.3570757",
-      "gameTimeAtDeath": 5.2628684,
-      "causeOfDeath": "Shot to death."
-    }
-  },
-  {
-    "eventTimestamp": "21/11/2023 13:51:49",
-    "userID": "NULL",
-    "eventName": "PlayerDeath",
-    "eventUUID": "3de88b9fbf59c6a1078f1cae123ffa29",
-    "GA_Value": 0.0,
-    "eventParams": {
-      "deathLocation": "x -3.267282 y 2.383224 z 0.3570757",
-      "gameTimeAtDeath": 5.7981143,
-      "causeOfDeath": "Shot to death."
-    }
-  },
-  {
-    "eventTimestamp": "21/11/2023 13:51:50",
-    "userID": "NULL",
-    "eventName": "PlayerDeath",
-    "eventUUID": "aa7bca63b7ea26b9c54cb7f0660a0b4f",
-    "GA_Value": 0.0,
-    "eventParams": {
-      "deathLocation": "x -3.267282 y 2.383224 z 0.3570757",
-      "gameTimeAtDeath": 6.338342,
-      "causeOfDeath": "Shot to death."
-    }
-  },
-  {
-    "eventTimestamp": "21/11/2023 13:51:50",
-    "userID": "NULL",
-    "eventName": "PlayerDeath",
-    "eventUUID": "aa7bca63b7ea26b9c54cb7f0660a0b4f",
-    "GA_Value": 0.0,
-    "eventParams": {
-      "deathLocation": "x -3.267282 y 2.383224 z 0.3570757",
-      "gameTimeAtDeath": 6.342945,
-      "causeOfDeath": "Shot to death."
-    }
-  },
-  {
-    "eventTimestamp": "21/11/2023 13:51:50",
-    "userID": "NULL",
-    "eventName": "PlayerDeath",
-    "eventUUID": "aa7bca63b7ea26b9c54cb7f0660a0b4f",
-    "GA_Value": 0.0,
-    "eventParams": {
-      "deathLocation": "x -3.267282 y 2.383224 z 0.3570757",
-      "gameTimeAtDeath": 6.87676668,
-      "causeOfDeath": "Shot to death."
-    }
-  },
-  {
-    "eventTimestamp": "21/11/2023 13:51:51",
-    "userID": "NULL",
-    "eventName": "PlayerDeath",
-    "eventUUID": "0e86cc7d8c2fb1d883cefbfdd0554583",
-    "GA_Value": 0.0,
-    "eventParams": {
-      "deathLocation": "x -3.267282 y 2.383224 z 0.3570757",
-      "gameTimeAtDeath": 7.4181,
-      "causeOfDeath": "Shot to death."
-    }
-  },
-  {
-    "eventTimestamp": "21/11/2023 13:51:51",
-    "userID": "NULL",
-    "eventName": "PlayerDeath",
-    "eventUUID": "0e86cc7d8c2fb1d883cefbfdd0554583",
-    "GA_Value": 0.0,
-    "eventParams": {
-      "deathLocation": "x -3.267282 y 2.383224 z 0.3570757",
-      "gameTimeAtDeath": 7.42205572,
-      "causeOfDeath": "Shot to death."
-    }
-  },
-  {
-    "eventTimestamp": "21/11/2023 13:51:51",
-    "userID": "NULL",
-    "eventName": "PlayerDeath",
-    "eventUUID": "0e86cc7d8c2fb1d883cefbfdd0554583",
-    "GA_Value": 0.0,
-    "eventParams": {
-      "deathLocation": "x -3.267282 y 2.383224 z 0.3570757",
-      "gameTimeAtDeath": 7.957986,
-      "causeOfDeath": "Shot to death."
-    }
-  },
-  {
-    "eventTimestamp": "21/11/2023 13:51:52",
-    "userID": "NULL",
-    "eventName": "PlayerDeath",
-    "eventUUID": "eef975b5573526618662da0987e99390",
-    "GA_Value": 0.0,
-    "eventParams": {
-      "deathLocation": "x -3.267282 y 2.383224 z 0.3570757",
-      "gameTimeAtDeath": 8.478805,
-      "causeOfDeath": "Shot to death."
-    }
-  },
-  {
-    "eventTimestamp": "21/11/2023 13:51:52",
-    "userID": "NULL",
-    "eventName": "PlayerDeath",
-    "eventUUID": "eef975b5573526618662da0987e99390",
-    "GA_Value": 0.0,
-    "eventParams": {
-      "deathLocation": "x -3.267282 y 2.383224 z 0.3570757",
-      "gameTimeAtDeath": 8.484121,
-      "causeOfDeath": "Shot to death."
-    }
-  },
-  {
-    "eventTimestamp": "21/11/2023 13:51:52",
-    "userID": "NULL",
-    "eventName": "PlayerDeath",
-    "eventUUID": "eef975b5573526618662da0987e99390",
-    "GA_Value": 0.0,
-    "eventParams": {
-      "deathLocation": "x -3.267282 y 2.383224 z 0.3570757",
-      "gameTimeAtDeath": 9.038218,
-      "causeOfDeath": "Shot to death."
-    }
-  },
-  {
-    "eventTimestamp": "21/11/2023 13:51:53",
-    "userID": "NULL",
-    "eventName": "PlayerDeath",
-    "eventUUID": "d29bf6dfb40297cd4c2b302f298f37e8",
-    "GA_Value": 0.0,
-    "eventParams": {
-      "deathLocation": "x -3.267282 y 2.383224 z 0.3570757",
-      "gameTimeAtDeath": 9.517428,
-      "causeOfDeath": "Shot to death."
-    }
-  },
-  {
-    "eventTimestamp": "21/11/2023 13:51:53",
-    "userID": "NULL",
-    "eventName": "PlayerDeath",
-    "eventUUID": "d29bf6dfb40297cd4c2b302f298f37e8",
-    "GA_Value": 0.0,
-    "eventParams": {
-      "deathLocation": "x -3.267282 y 2.383224 z 0.3570757",
-      "gameTimeAtDeath": 9.52085,
-      "causeOfDeath": "Shot to death."
-    }
-  },
-  {
-    "eventTimestamp": "21/11/2023 13:52:17",
-    "userID": "NULL",
-    "eventName": "PlayerDeath",
-    "eventUUID": "029581136c0f0dc8974c521d465700ae",
-    "GA_Value": 0.0,
-    "eventParams": {
-      "deathLocation": "x -6.869202 y 2.383224 z 1.584879",
-      "gameTimeAtDeath": 5.57655334,
-      "causeOfDeath": "Shot to death."
-    }
-  },
-  {
-    "eventTimestamp": "21/11/2023 13:52:23",
-    "userID": "NULL",
-    "eventName": "PlayerDeath",
-    "eventUUID": "48fa644704a4e29ef8e7674c3b168de1",
-    "GA_Value": 0.0,
-    "eventParams": {
-      "deathLocation": "x -7.342398 y 2.383224 z 3.453686",
-      "gameTimeAtDeath": 6.5644145,
-      "causeOfDeath": "Shot to death."
-    }
-  },
-  {
-    "eventTimestamp": "21/11/2023 13:52:28",
-    "userID": "NULL",
-    "eventName": "PlayerDeath",
-    "eventUUID": "bc7b3c172bb4ecac3389b62dabb8ba0a",
-    "GA_Value": 0.0,
-    "eventParams": {
-      "deathLocation": "x -11.35161 y 2.383224 z 4.302438",
-      "gameTimeAtDeath": 4.96802,
-      "causeOfDeath": "Shot to death."
-    }
-  },
-  {
-    "eventTimestamp": "21/11/2023 13:52:33",
-    "userID": "NULL",
-    "eventName": "PlayerDeath",
-    "eventUUID": "69a1ce2140cb8389fd98aa8af5abd732",
-    "GA_Value": 0.0,
-    "eventParams": {
-      "deathLocation": "x -9.491963 y 2.383224 z 2.951161",
-      "gameTimeAtDeath": 5.005424,
-      "causeOfDeath": "Shot to death."
-    }
-  },
-  {
-    "eventTimestamp": "21/11/2023 13:52:38",
-    "userID": "NULL",
-    "eventName": "PlayerDeath",
-    "eventUUID": "5cb7c96724a4eb18e8b3b680c384e727",
-    "GA_Value": 0.0,
-    "eventParams": {
-      "deathLocation": "x -8.880398 y 2.383224 z -3.257917",
-      "gameTimeAtDeath": 4.650018,
-      "causeOfDeath": "Shot to death."
-    }
-  },
-  {
-    "eventTimestamp": "21/11/2023 13:52:42",
-    "userID": "NULL",
-    "eventName": "PlayerDeath",
-    "eventUUID": "068fe2b46d519630dff49a25508c8cb2",
-    "GA_Value": 0.0,
-    "eventParams": {
-      "deathLocation": "x -6.400307 y 2.383224 z -1.464465",
-      "gameTimeAtDeath": 5.00963259,
-      "causeOfDeath": "Shot to death."
-    }
-  },
-  {
-    "eventTimestamp": "21/11/2023 13:52:47",
-    "userID": "NULL",
-    "eventName": "PlayerDeath",
-    "eventUUID": "08fe7bd3382d845afa2ddc8760a45bde",
-    "GA_Value": 0.0,
-    "eventParams": {
-      "deathLocation": "x -8.764651 y 2.383224 z 1.925229",
-      "gameTimeAtDeath": 5.01691675,
-      "causeOfDeath": "Shot to death."
-    }
-  },
-  {
-    "eventTimestamp": "21/11/2023 13:57:08",
-    "userID": "NULL",
-    "eventName": "playerStats",
-    "eventUUID": "4ad4d30088383a2ce50a0bec7e53e0b7",
-    "GA_Value": 0.0,
-    "eventParams": {
-      "enemiesKilled": 18,
-      "gameTime": 57.9789162,
-      "noOfDeaths": 0,
-      "noOfTeleports": 18,
-      "noOfShotTaken": 14,
-      "overallDamageTaken": 210.0
-    }
-  },
-  {
-    "eventTimestamp": "21/11/2023 14:04:58",
-    "userID": "NULL",
-    "eventName": "playerStats",
-    "eventUUID": "9357236fc2d4048c633005a102f39d10",
-    "GA_Value": 0.0,
-    "eventParams": {
-      "enemiesKilled": 11,
-      "gameTime": 45.3176537,
-      "noOfDeaths": 0,
-      "noOfTeleports": 16,
-      "noOfShotTaken": 9,
-      "overallDamageTaken": 135.0
-    }
-  },
-  {
-    "eventTimestamp": "21/11/2023 14:13:42",
-    "userID": "NULL",
-    "eventName": "playerStats",
-    "eventUUID": "50ea1b518c50c160290cb1af6f8e3c67",
-    "GA_Value": 0.0,
-    "eventParams": {
-      "enemiesKilled": 18,
-      "gameTime": 38.8165436,
-      "noOfDeaths": 0,
-      "noOfTeleports": 50,
-      "noOfShotTaken": 11,
-      "overallDamageTaken": 165.0
-    }
-  },
-  {
-    "eventTimestamp": "21/11/2023 14:16:17",
-    "userID": "NULL",
-    "eventName": "PlayerDeath",
-    "eventUUID": "102d281104ee2b35dab4779504590102",
-    "GA_Value": 0.0,
-    "eventParams": {
-      "deathLocation": "x 3.195981 y 2.383225 z 11.70708",
-      "gameTimeAtDeath": 34.27691,
-      "causeOfDeath": "Shot to death."
-    }
-  },
-  {
-    "eventTimestamp": "21/11/2023 14:35:46",
-    "userID": "NULL",
-    "eventName": "PlayerDeath",
-    "eventUUID": "d090b17ce923bb1f200e237c1444b8aa",
-    "GA_Value": 0.0,
-    "eventParams": {
-      "deathLocation": "x -14.59392 y 2.383224 z 10.14356",
-      "gameTimeAtDeath": 6.23644972,
-      "causeOfDeath": "Shot to death."
-    }
-  },
-  {
-    "eventTimestamp": "21/11/2023 14:36:21",
-    "userID": "NULL",
-    "eventName": "PlayerDeath",
-    "eventUUID": "11687f94de4a69bd807ddac3ea9843dc",
-    "GA_Value": 0.0,
-    "eventParams": {
-      "deathLocation": "x -10.78591 y 2.383224 z 3.020647",
-      "gameTimeAtDeath": 7.657836,
-      "causeOfDeath": "Shot to death."
-    }
-  },
-  {
-    "eventTimestamp": "21/11/2023 14:38:26",
-    "userID": "NULL",
-    "eventName": "PlayerDeath",
-    "eventUUID": "b4bc049f6a770ffc032a26c30673406e",
-    "GA_Value": 0.0,
-    "eventParams": {
-      "deathLocation": "x 17.28492 y 2.383225 z 3.413803",
-      "gameTimeAtDeath": 7.619469,
-      "causeOfDeath": "Shot to death."
-    }
-  },
-  {
-    "eventTimestamp": "21/11/2023 14:38:34",
-    "userID": "NULL",
-    "eventName": "PlayerDeath",
-    "eventUUID": "5b8803ea53a5857dc87878ec77ed4a43",
-    "GA_Value": 0.0,
-    "eventParams": {
-      "deathLocation": "x -8.978855 y 2.383224 z -8.756127",
-      "gameTimeAtDeath": 7.95942831,
-      "causeOfDeath": "Shot to death."
-    }
-  },
-  {
-    "eventTimestamp": "21/11/2023 14:40:51",
-    "userID": "NULL",
-    "eventName": "PlayerDeath",
-    "eventUUID": "eea91be7bdca90cc473e59bbf08e4ca1",
-    "GA_Value": 0.0,
-    "eventParams": {
-      "deathLocation": "x -4.697979 y 2.383224 z 5.651933",
-      "gameTimeAtDeath": 43.317337,
-      "causeOfDeath": "Shot to death."
-    }
-  },
-  {
-    "eventTimestamp": "21/11/2023 14:42:42",
-    "userID": "NULL",
-    "eventName": "playerStats",
-    "eventUUID": "c684b5515ce98f623fb5a0f0b142d8fc",
-    "GA_Value": 0.0,
-    "eventParams": {
-      "enemiesKilled": 15,
-      "gameTime": 111.402252,
+      "gameTime": 27.82,
       "noOfDeaths": 1,
-      "noOfTeleports": 121,
-      "noOfShotTaken": 23,
-      "overallDamageTaken": 345.0
-    }
-  },
-  {
-    "eventTimestamp": "21/11/2023 14:50:11",
-    "userID": "NULL",
-    "eventName": "PlayerDeath",
-    "eventUUID": "d4958c2dc7a6104dca19269b6478191c",
-    "GA_Value": 0.0,
-    "eventParams": {
-      "deathLocation": "x -7.470922 y 2.383224 z 11.09483",
-      "gameTimeAtDeath": 6.05660725,
-      "causeOfDeath": "Shot to death."
-    }
-  },
-  {
-    "eventTimestamp": "21/11/2023 14:50:48",
-    "userID": "NULL",
-    "eventName": "playerStats",
-    "eventUUID": "34dd6f9d484e2fdd67455ba794eb5d44",
-    "GA_Value": 0.0,
-    "eventParams": {
-      "enemiesKilled": 19,
-      "gameTime": 36.6830177,
-      "noOfDeaths": 1,
-      "noOfTeleports": 12,
-      "noOfShotTaken": 20,
-      "overallDamageTaken": 300.0
+      "overallDamageTaken": 315.0,
+      "noOfTeleports": 28,
+      "timeTillfirstTeleport": 0.82,
+      "avgTimeSpentTeleporting": 0.19
     }
   }
 ]

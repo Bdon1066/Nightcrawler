@@ -1,7 +1,9 @@
 using Abertay.Analytics;
+using Newtonsoft.Json.Linq;
 using System;
 using System.Collections;
 using System.Collections.Generic;
+using System.Linq;
 using UnityEngine;
 using UnityEngine.EventSystems;
 
@@ -48,10 +50,13 @@ public class PlayerController : MonoBehaviour
      private float teleportTime;
      private Vector3 teleportTarget;
      private bool isTeleporting;
+     private bool hasTeleportedBefore;
+     private float timeSpentTeleporting;
+     private List<float> timeSpentTeleportingValues = new List<float>();
     [Space(10)]
      public LineRenderer teleportLineDraw;
     [SerializeField] private TeleportHeatmap heatmap;
-    private bool spawnTransparentPlayer;
+     private bool spawnTransparentPlayer;
 
     [Header("Combat")]
     [SerializeField] private Transform combatHand;
@@ -59,6 +64,8 @@ public class PlayerController : MonoBehaviour
     [SerializeField] private float healthRegen;
     [SerializeField] private float healthRegenDelay;
      private float health;
+    [Header("Analytics")]
+    [SerializeField] GameObject roomTriggers;
 
     //CAMERA
     private float turnSmoothTime = 0.1f;
@@ -79,6 +86,7 @@ public class PlayerController : MonoBehaviour
         uIManager.UpdateHUD(health, teleportStamina);
 
         teleportDistance = startingTeleportDistance;
+        hasTeleportedBefore = false;
         teleportLineDraw.enabled = false;
 
         controller.enabled = false;
@@ -94,7 +102,13 @@ public class PlayerController : MonoBehaviour
         Sprint();
         Stamina();
         HealthRegen();
-       
+        
+       if (isInvisible)
+        {
+            timeSpentTeleporting += Time.deltaTime;
+
+        }
+
     }
     void FixedUpdate() //for calaculating movement
     {
@@ -159,9 +173,16 @@ public class PlayerController : MonoBehaviour
         //When player holds down left click || TODO:  maybe Add so they have to hold down for a certain amount of time before telporting activates
         if (Input.GetMouseButton(1))
         {
+            if (!hasTeleportedBefore)
+            {
+                hasTeleportedBefore = true;
+                gameManager.LogFirstTeleportInput(gameManager.gameTime);
+                
+            }
             FreezeMovement();
             TeleportGraphics();
             gameObject.layer = LayerMask.NameToLayer("IgnoreCollisions");
+           
             isInvisible = true;
            
         }
@@ -247,19 +268,24 @@ public class PlayerController : MonoBehaviour
 
         controller.Move(moveDir * Time.deltaTime);
         Invoke("StopTeleport", teleportTime - 0.01f);
+       
     }
-  
-    
+   
+
+
+
     void StopTeleport()
     {
+        gameManager.noOfTeleports++;
+        print(gameManager.noOfTeleports);
         controller.Move(Vector3.zero);
         isTeleporting = false;
-        gameManager.noOfTeleports++;
-        
+       
+        timeSpentTeleportingValues.Add(timeSpentTeleporting);
         isInvisible = false;
         playerGraphics.ResetGraphics();
         transparentPlayerVFX.Disable();
-
+       
         gameObject.layer = LayerMask.NameToLayer("Player");
         UnFreezeMovement();
         teleportLineDraw.enabled = false;
@@ -324,18 +350,18 @@ public class PlayerController : MonoBehaviour
         }
     }
 
-    public void TakeDamage(float damageAmount)
+    public void TakeDamage(float damageAmount, string causeOfDamage)
     {
-        gameManager.noOfShotTaken++;
         gameManager.overallDamageTaken += damageAmount;
 
         health = health - damageAmount;
         uIManager.UpdateHUD(health,teleportStamina);
-
+      //  gameManager.deathLocation = FindRoomOnDeath();
         if (health <= 0)
         {
             health = 0;
-            Death("Shot to death.");
+           
+            Death(causeOfDamage);
         }
     }
     public void Death(string deathCause)
@@ -378,15 +404,8 @@ public class PlayerController : MonoBehaviour
     }
     private void DeathAnalytics(string deathCause)
     {
-        Dictionary<string, object> data = new Dictionary<string, object>();
-        var x = controller.transform.position.x;
-        var y = controller.transform.position.y;
-        var z = controller.transform.position.z;
-        string deathLocationCoOrds = ("x " + x + " y " + y + " z " + z);
-        data.Add("deathLocation", deathLocationCoOrds);
-        data.Add("gameTimeAtDeath", gameManager.gameTime);
-        data.Add("causeOfDeath", deathCause);
-        AnalyticsManager.SendCustomEvent("PlayerDeath", data);
+        gameManager.Analytics(deathCause);
+
         AnalyticsManager.LogHeatmapEvent("PlayerDeath", controller.transform.position, Color.red);
     }
     private bool IsGrounded()
@@ -399,6 +418,29 @@ public class PlayerController : MonoBehaviour
         {
             return false;
         }
+       
+    }
+    public float AvgTimeSpentTeleporting()
+    {
+        var fixedNoTeleports = gameManager.noOfTeleports / 5;
+       return timeSpentTeleporting / fixedNoTeleports;
+    }
+    public string FindRoomOnDeath() //fucking does not work 
+    {
+        
+        foreach (Transform child in roomTriggers.transform)
+        {
+          
+           var roomTrigger = child.gameObject.GetComponent<RoomTrigger>();
+           if (roomTrigger.playerIsInRoom)
+           {
+                print(child.name);
+                return child.name;
+           }
+
+        }
+        return null;
+
        
     }
 

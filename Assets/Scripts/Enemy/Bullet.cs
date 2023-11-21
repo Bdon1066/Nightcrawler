@@ -8,7 +8,7 @@ public class Bullet : MonoBehaviour
         if (collider.gameObject.CompareTag("Player") && !collider.gameObject.GetComponent<PlayerController>().isInvisible)
         {  
             //Debug.Log("Shot Player");
-            collider.gameObject.GetComponent<PlayerController>().TakeDamage(damage);
+            collider.gameObject.GetComponent<PlayerController>().TakeDamage(damage, name);
             Destroy(this.gameObject);
         }
     }
