@@ -28,7 +28,7 @@ public class EnemyController : MonoBehaviour
     }
     void Update() //for detecting inputs
     {
-        Attack();
+       
     }
     void FixedUpdate() //for calaculating movement
     {
@@ -97,21 +97,10 @@ public class EnemyController : MonoBehaviour
         moveDir.y = ySpeed;
         if (enableMovement) { controller.Move(moveDir * Time.deltaTime); }
     }
+    public void Death() 
+    {
+     gameObject.SetActive(false);    
+    }
 
-    void FreezeMovement()
-    {
-        enableGravity = false;
-        enableMovement = false;
-
-    }
-    void UnFreezeMovement()
-    {
-        enableGravity = true;
-        enableMovement = true;
-    }
-    void Attack()
-    {
-        
-    }
 
 }

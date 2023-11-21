@@ -2,24 +2,29 @@ using UnityEngine;
 using System.Collections;
 using System.Collections.Generic;
 using Abertay.Analytics;
-using NUnit.Framework.Constraints;
+using UnityEngine.SceneManagement;
 
 public class GameManager : MonoBehaviour
 {
     [SerializeField] UIManager uiManager;
     private bool gameOver;
     [HideInInspector] public float gameTime;
-    [HideInInspector]public int enemiesKilled;
+    [HideInInspector] public int enemiesKilled;
     [HideInInspector] public int noOfDeaths;
     [HideInInspector] public int noOfTeleports;
     [HideInInspector] public int noOfShotTaken;
     [HideInInspector] public float overallDamageTaken;
+    [SerializeField] GameObject enemies;
+
 
     void Start()
     {
+
+        //  enemies.GetComponentInChildren<EnemyController>();
         Cursor.visible = false;
         Cursor.lockState = CursorLockMode.Confined;
         StartCoroutine(Intro());
+
     }
 
     IEnumerator Intro()
@@ -28,9 +33,18 @@ public class GameManager : MonoBehaviour
         uiManager.HideObjective();
     }
 
-    public void EndGame()
+    public void EndGame() //when player kills president
     {
         StartCoroutine(Outro());
+    }
+    public void ResetLevel() //when player dies
+    {
+        gameTime = 0;
+        foreach (Transform child in enemies.transform)
+        {
+            child.gameObject.SetActive(true);
+        }
+
     }
     IEnumerator Outro()
     {

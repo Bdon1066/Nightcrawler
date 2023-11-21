@@ -38,8 +38,9 @@ public class PlayerCombat : MonoBehaviour
         if (enemy.CompareTag("President"))
         {
             gameManager.EndGame();
+            Destroy(enemy.gameObject);
         }
-        Destroy(enemy.gameObject);
+        enemy.GetComponent<EnemyController>().Death();
         gameManager.enemiesKilled += 1;
 
    }

@@ -182,7 +182,7 @@ public class PlayerController : MonoBehaviour
         //draws line of where teleport will go || TODO add a little silloute thing where the player will end up
         teleportLineDraw.enabled = true;
         teleportLineDraw.SetPosition(0, controller.transform.position);
-        heatmap.HeatmapStart(controller.transform.position);
+        //heatmap.HeatmapStart(controller.transform.position);
 
         RaycastHit hit;
         if (Physics.Raycast(controller.transform.position, controller.transform.forward, out hit, teleportDistance, ~teleportThruLayer))
@@ -224,7 +224,7 @@ public class PlayerController : MonoBehaviour
         else
         {
             teleportTarget = controller.transform.forward * teleportDistance;
-            heatmap.HeatmapEnd(controller.transform.forward * teleportDistance);
+           // heatmap.HeatmapEnd(controller.transform.forward * teleportDistance);
             isTeleporting = true;
         }
     }
@@ -255,7 +255,6 @@ public class PlayerController : MonoBehaviour
         controller.Move(Vector3.zero);
         isTeleporting = false;
         gameManager.noOfTeleports++;
-        print(gameManager.noOfTeleports);
         
         isInvisible = false;
         playerGraphics.ResetGraphics();
@@ -342,18 +341,11 @@ public class PlayerController : MonoBehaviour
     public void Death(string deathCause)
     {
         gameManager.noOfDeaths++;
-        Dictionary<string, object> data = new Dictionary<string, object>();
-        var x = controller.transform.position.x;
-        var y = controller.transform.position.y;
-        var z = controller.transform.position.z;
-        string deathLocationCoOrds = ("x "+ x + " y " + y + " z " + z);
-        data.Add("deathLocation", deathLocationCoOrds);
-        data.Add("gameTimeAtDeath", gameManager.gameTime);
-        data.Add("causeOfDeath", deathCause);
-        AnalyticsManager.SendCustomEvent("PlayerDeath", data);
-        AnalyticsManager.LogHeatmapEvent("PlayerDeath", controller.transform.position, Color.red);
+        DeathAnalytics(deathCause);
+        gameManager.ResetLevel();
         Respawn();
     }
+   
     private void Respawn()
     {
         Initialize();
@@ -383,6 +375,19 @@ public class PlayerController : MonoBehaviour
         {
             ySpeed += Physics.gravity.y * gravityScale * Time.deltaTime;
         }
+    }
+    private void DeathAnalytics(string deathCause)
+    {
+        Dictionary<string, object> data = new Dictionary<string, object>();
+        var x = controller.transform.position.x;
+        var y = controller.transform.position.y;
+        var z = controller.transform.position.z;
+        string deathLocationCoOrds = ("x " + x + " y " + y + " z " + z);
+        data.Add("deathLocation", deathLocationCoOrds);
+        data.Add("gameTimeAtDeath", gameManager.gameTime);
+        data.Add("causeOfDeath", deathCause);
+        AnalyticsManager.SendCustomEvent("PlayerDeath", data);
+        AnalyticsManager.LogHeatmapEvent("PlayerDeath", controller.transform.position, Color.red);
     }
     private bool IsGrounded()
     {
