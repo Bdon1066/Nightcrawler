@@ -15,7 +15,7 @@ public class Gun : MonoBehaviour
        spawnedBullet.transform.LookAt(target);
        spawnedBullet.GetComponent<Rigidbody>().AddForce(spawnedBullet.transform.forward * bulletSpeed, ForceMode.Impulse);
 
-       StartCoroutine(DestroyBullet(spawnedBullet, 2f));
+       StartCoroutine(DestroyBullet(spawnedBullet, 10f));
     }
     private IEnumerator DestroyBullet(GameObject projectile, float delay)
     {

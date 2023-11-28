@@ -42,11 +42,11 @@ public class EnemyController : MonoBehaviour
         RaycastHit hit;
         Vector3 direction = (playerLocation.position - this.transform.position).normalized;
         Vector3 eyePosition = (controller.transform.position) + new Vector3(0, 1, 0);
-       if( Physics.Raycast(eyePosition, direction, out hit, sightDistance, ~playerLayer))
-       {
+        if (Physics.Raycast(eyePosition, direction, out hit, sightDistance, ~playerLayer))
+        {
             if (hit.collider.gameObject.CompareTag("Player") && !player.isInvisible)
             {
-               // print(this.gameObject.name + " CAN see player");
+                // print(this.gameObject.name + " CAN see player");
                 AttackState();
             }
             else
@@ -54,6 +54,10 @@ public class EnemyController : MonoBehaviour
                 IdleState();
             }
 
+        }
+        else
+        {
+            IdleState();
         }
 
     }
@@ -99,7 +103,7 @@ public class EnemyController : MonoBehaviour
     }
     public void Death() 
     {
-     gameObject.SetActive(false);    
+        gameObject.SetActive(false);    
     }
 
 

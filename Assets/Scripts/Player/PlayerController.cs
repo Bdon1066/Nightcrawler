@@ -11,6 +11,7 @@ public class PlayerController : MonoBehaviour
 {
     [Header("Refrences")]
     [SerializeField] private CharacterController controller;
+    [SerializeField] private PlayerCombat playerCombat;
     [SerializeField] public GameManager gameManager;
     [SerializeField] private UIManager uIManager;
     [Space(10)]
@@ -141,9 +142,11 @@ public class PlayerController : MonoBehaviour
 
         if (direction.magnitude >= 0.1f)
         {
-            float targetAngle = Mathf.Atan2(direction.x, direction.z) * Mathf.Rad2Deg + camera.eulerAngles.y;
-            float angle = Mathf.SmoothDampAngle(transform.eulerAngles.y, targetAngle, ref turnSmoothVelocity, turnSmoothTime);
-            transform.rotation = Quaternion.Euler(0f, angle, 0f);
+           float targetAngle;
+           if (!playerCombat.isAttacking) {  targetAngle = Mathf.Atan2(direction.x, direction.z) * Mathf.Rad2Deg + camera.eulerAngles.y; }
+           else { targetAngle = Mathf.Atan2(direction.x, direction.z) * Mathf.Rad2Deg + camera.eulerAngles.y; }
+           float angle = Mathf.SmoothDampAngle(transform.eulerAngles.y, targetAngle, ref turnSmoothVelocity, turnSmoothTime);
+           transform.rotation = Quaternion.Euler(0f, angle, 0f);
 
             moveDir = Quaternion.Euler(0f, targetAngle, 0f) * Vector3.forward * speed;
 

@@ -45,12 +45,12 @@ public class UIManager : MonoBehaviour
     {
         objective.gameObject.SetActive(false);
     }
-    public void GameOverScreen(int enemiesKilled, float gameEndTime,int noOfDeaths)
+    public void GameOverScreen(int enemiesKilled,int totalEnemies, float gameEndTime,int noOfDeaths)
     {
         gameOver.gameObject.SetActive(true);
         HUD.gameObject.SetActive(false);
         timer.gameObject.SetActive(false);
-        enemiesKilledText.text = ("Enemies Killed " + enemiesKilled.ToString());
+        enemiesKilledText.text = ("Enemies Killed " + enemiesKilled.ToString() + "/" + totalEnemies.ToString());
         gameEndTimeText.text = ("Time " + gameEndTime.ToString("0.00"));
         noOfDeathsText.text = ("Deaths " + noOfDeaths.ToString());
 

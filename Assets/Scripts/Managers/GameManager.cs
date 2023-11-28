@@ -19,16 +19,21 @@ public class GameManager : MonoBehaviour
     [HideInInspector] public string deathLocation;
     [HideInInspector] public bool wonGame;
     [SerializeField] GameObject enemies;
+    int totalEnemies =1;
     [SerializeField] PlayerController pc;
 
 
     void Start()
     {
-        //  enemies.GetComponentInChildren<EnemyController>();
+   
         Cursor.visible = false;
         Cursor.lockState = CursorLockMode.Confined;
-        StartCoroutine(Intro());
 
+        StartCoroutine(Intro());
+        foreach (Transform child in enemies.transform)
+        {
+            totalEnemies++;
+        }
     }
 
     IEnumerator Intro()
@@ -54,7 +59,7 @@ public class GameManager : MonoBehaviour
     IEnumerator Outro()
     {
         wonGame = true;
-        uiManager.GameOverScreen(enemiesKilled,gameTime,noOfDeaths);
+        uiManager.GameOverScreen(enemiesKilled, totalEnemies,gameTime, noOfDeaths);
         Analytics(null);
 
         gameOver = true;
@@ -99,5 +104,30 @@ public class GameManager : MonoBehaviour
     {
         timeTillfirstTeleport = time;
     }
+    public Transform FindNearestEnemy(Transform playerLocation)
+    {
+ 
+        float minDistance = 100;
+        Transform nearestEnemy =  enemies.transform.GetChild(0);
+        foreach (Transform child in enemies.transform)
+        {
+            if (child.gameObject.activeInHierarchy == true)
+            {
+                var distance = Vector3.Distance(playerLocation.position, child.position);
+                if (distance < minDistance)
+                {
+                    minDistance = distance;
+                    nearestEnemy = child;
+                }
+            }
+            
+           
+        }
+      //  print(nearestEnemy.gameObject);
+        return nearestEnemy;
+        
+    }
 }
+
+
 

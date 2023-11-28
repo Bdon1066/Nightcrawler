@@ -70,5 +70,788 @@
       "timeTillfirstTeleport": 0.82,
       "avgTimeSpentTeleporting": 0.19
     }
+  },
+  {
+    "eventTimestamp": "28/11/2023 13:54:05",
+    "userID": "Scotty too hotty",
+    "eventName": "runEnded",
+    "eventUUID": "94b5467f187cc7c88bcd50fd2721f641",
+    "GA_Value": 0.0,
+    "eventParams": {
+      "wonGame": true,
+      "enemiesKilled": 18,
+      "gameTime": 56.94,
+      "noOfDeaths": 0,
+      "overallDamageTaken": 210.0,
+      "noOfTeleports": 23,
+      "timeTillfirstTeleport": 4.81999969,
+      "avgTimeSpentTeleporting": 0.68
+    }
+  },
+  {
+    "eventTimestamp": "28/11/2023 13:54:13",
+    "userID": "Scotty too hotty",
+    "eventName": "runEnded",
+    "eventUUID": "4560cbd3f2a8cc42d4983f70f1e54d36",
+    "GA_Value": 0.0,
+    "eventParams": {
+      "wonGame": true,
+      "enemiesKilled": 18,
+      "gameTime": 56.94,
+      "noOfDeaths": 1,
+      "overallDamageTaken": 210.0,
+      "noOfTeleports": 87,
+      "timeTillfirstTeleport": 4.81999969,
+      "avgTimeSpentTeleporting": 0.229999989
+    }
+  },
+  {
+    "eventTimestamp": "28/11/2023 13:54:15",
+    "userID": "Scotty too hotty",
+    "eventName": "runEnded",
+    "eventUUID": "fdaab193be2d2fd2828eda762e0eea62",
+    "GA_Value": 0.0,
+    "eventParams": {
+      "wonGame": true,
+      "enemiesKilled": 0,
+      "gameTime": 0.0,
+      "noOfDeaths": 2,
+      "overallDamageTaken": 210.0,
+      "noOfTeleports": 100,
+      "timeTillfirstTeleport": 0.0,
+      "avgTimeSpentTeleporting": 0.22
+    }
+  },
+  {
+    "eventTimestamp": "28/11/2023 14:43:49",
+    "userID": "NULL",
+    "eventName": "runEnded",
+    "eventUUID": "6238e4cc9b767f7a7a108022431ff81a",
+    "GA_Value": 0.0,
+    "eventParams": {
+      "wonGame": false,
+      "causeOfDeath": "Fell off the world.",
+      "deathLocation": "Room0",
+      "enemiesKilled": 0,
+      "gameTime": 4.08,
+      "noOfDeaths": 1,
+      "overallDamageTaken": 0.0,
+      "noOfTeleports": 7,
+      "timeTillfirstTeleport": 0.57,
+      "avgTimeSpentTeleporting": 0.32
+    }
+  },
+  {
+    "eventTimestamp": "28/11/2023 14:44:09",
+    "userID": "NULL",
+    "eventName": "runEnded",
+    "eventUUID": "3ccb79d58dd15fb951ca49cd93dbe4dd",
+    "GA_Value": 0.0,
+    "eventParams": {
+      "wonGame": true,
+      "enemiesKilled": 0,
+      "gameTime": 20.02,
+      "noOfDeaths": 1,
+      "overallDamageTaken": 15.0,
+      "noOfTeleports": 47,
+      "timeTillfirstTeleport": 1.57999992,
+      "avgTimeSpentTeleporting": 0.17
+    }
+  },
+  {
+    "eventTimestamp": "28/11/2023 14:48:16",
+    "userID": "NULL",
+    "eventName": "runEnded",
+    "eventUUID": "73fcb008cb27dbefbd97e6eb217e61f0",
+    "GA_Value": 0.0,
+    "eventParams": {
+      "wonGame": true,
+      "enemiesKilled": 2,
+      "gameTime": 25.34,
+      "noOfDeaths": 0,
+      "overallDamageTaken": 90.0,
+      "noOfTeleports": 15,
+      "timeTillfirstTeleport": 10.33,
+      "avgTimeSpentTeleporting": 0.26
+    }
+  },
+  {
+    "eventTimestamp": "28/11/2023 14:51:48",
+    "userID": "NULL",
+    "eventName": "runEnded",
+    "eventUUID": "85ab02090fafe5f56b030ec257cf1ff8",
+    "GA_Value": 0.0,
+    "eventParams": {
+      "wonGame": true,
+      "enemiesKilled": 19,
+      "gameTime": 33.34,
+      "noOfDeaths": 0,
+      "overallDamageTaken": 150.0,
+      "noOfTeleports": 21,
+      "timeTillfirstTeleport": 0.669999957,
+      "avgTimeSpentTeleporting": 0.299999982
+    }
+  },
+  {
+    "eventTimestamp": "28/11/2023 14:57:06",
+    "userID": "NULL",
+    "eventName": "runEnded",
+    "eventUUID": "1e3530c91f8ebed77dfced249cf01397",
+    "GA_Value": 0.0,
+    "eventParams": {
+      "wonGame": true,
+      "enemiesKilled": 3,
+      "gameTime": 16.3,
+      "noOfDeaths": 0,
+      "overallDamageTaken": 15.0,
+      "noOfTeleports": 26,
+      "timeTillfirstTeleport": 0.47,
+      "avgTimeSpentTeleporting": 0.16
+    }
+  },
+  {
+    "eventTimestamp": "28/11/2023 14:58:04",
+    "userID": "NULL",
+    "eventName": "runEnded",
+    "eventUUID": "1b09414d2563b99d42fe67e974ff7bf4",
+    "GA_Value": 0.0,
+    "eventParams": {
+      "wonGame": true,
+      "enemiesKilled": 19,
+      "gameTime": 34.68,
+      "noOfDeaths": 0,
+      "overallDamageTaken": 90.0,
+      "noOfTeleports": 45,
+      "timeTillfirstTeleport": 4.00999975,
+      "avgTimeSpentTeleporting": 0.16
+    }
+  },
+  {
+    "eventTimestamp": "28/11/2023 15:03:42",
+    "userID": "NULL",
+    "eventName": "runEnded",
+    "eventUUID": "cac57ce5620dee44ae47ee6abadc08df",
+    "GA_Value": 0.0,
+    "eventParams": {
+      "wonGame": true,
+      "enemiesKilled": 19,
+      "gameTime": 35.76,
+      "noOfDeaths": 0,
+      "overallDamageTaken": 165.0,
+      "noOfTeleports": 21,
+      "timeTillfirstTeleport": 0.53,
+      "avgTimeSpentTeleporting": 0.359999985
+    }
+  },
+  {
+    "eventTimestamp": "28/11/2023 15:03:56",
+    "userID": "NULL",
+    "eventName": "runEnded",
+    "eventUUID": "baaf4dd6061cb684936ba705d275ab0e",
+    "GA_Value": 0.0,
+    "eventParams": {
+      "wonGame": true,
+      "enemiesKilled": 19,
+      "gameTime": 35.76,
+      "noOfDeaths": 1,
+      "overallDamageTaken": 165.0,
+      "noOfTeleports": 42,
+      "timeTillfirstTeleport": 0.53,
+      "avgTimeSpentTeleporting": 0.24
+    }
+  },
+  {
+    "eventTimestamp": "28/11/2023 15:03:59",
+    "userID": "NULL",
+    "eventName": "runEnded",
+    "eventUUID": "4302509b9b8731bc803ff5edfb1e73e6",
+    "GA_Value": 0.0,
+    "eventParams": {
+      "wonGame": true,
+      "enemiesKilled": 0,
+      "gameTime": 0.0,
+      "noOfDeaths": 2,
+      "overallDamageTaken": 165.0,
+      "noOfTeleports": 48,
+      "timeTillfirstTeleport": 0.0,
+      "avgTimeSpentTeleporting": 0.229999989
+    }
+  },
+  {
+    "eventTimestamp": "28/11/2023 15:22:46",
+    "userID": "NULL",
+    "eventName": "runEnded",
+    "eventUUID": "cec957e372af113f818b335f14e488a5",
+    "GA_Value": 0.0,
+    "eventParams": {
+      "wonGame": false,
+      "causeOfDeath": "Enemy (18)'s Bullet",
+      "deathLocation": "Room4",
+      "enemiesKilled": 0,
+      "gameTime": 35.92,
+      "noOfDeaths": 1,
+      "overallDamageTaken": 150.0,
+      "noOfTeleports": 19,
+      "timeTillfirstTeleport": 4.89,
+      "avgTimeSpentTeleporting": 0.24
+    }
+  },
+  {
+    "eventTimestamp": "28/11/2023 15:23:53",
+    "userID": "NULL",
+    "eventName": "runEnded",
+    "eventUUID": "a36efb0b767704e858819d6986f7e102",
+    "GA_Value": 0.0,
+    "eventParams": {
+      "wonGame": false,
+      "causeOfDeath": "Enemy (18)'s Bullet",
+      "deathLocation": "Room0",
+      "enemiesKilled": 0,
+      "gameTime": 27.74,
+      "noOfDeaths": 1,
+      "overallDamageTaken": 105.0,
+      "noOfTeleports": 9,
+      "timeTillfirstTeleport": 0.55,
+      "avgTimeSpentTeleporting": 0.21
+    }
+  },
+  {
+    "eventTimestamp": "28/11/2023 15:24:18",
+    "userID": "NULL",
+    "eventName": "runEnded",
+    "eventUUID": "d9ae773ee0bc25796ad6449826185b16",
+    "GA_Value": 0.0,
+    "eventParams": {
+      "wonGame": false,
+      "causeOfDeath": "Fell off the world.",
+      "deathLocation": "Room4",
+      "enemiesKilled": 0,
+      "gameTime": 25.0,
+      "noOfDeaths": 2,
+      "overallDamageTaken": 105.0,
+      "noOfTeleports": 35,
+      "timeTillfirstTeleport": 0.909999967,
+      "avgTimeSpentTeleporting": 0.21
+    }
+  },
+  {
+    "eventTimestamp": "28/11/2023 15:48:12",
+    "userID": "NULL",
+    "eventName": "runEnded",
+    "eventUUID": "b9892b9ddacfdc03ee27b0b544a6d22d",
+    "GA_Value": 0.0,
+    "eventParams": {
+      "wonGame": false,
+      "causeOfDeath": "Enemy (11)'s Bullet",
+      "deathLocation": "Room4",
+      "enemiesKilled": 9,
+      "gameTime": 26.3599987,
+      "noOfDeaths": 1,
+      "overallDamageTaken": 135.0,
+      "noOfTeleports": 6,
+      "timeTillfirstTeleport": 1.15,
+      "avgTimeSpentTeleporting": 0.28
+    }
+  },
+  {
+    "eventTimestamp": "28/11/2023 15:51:21",
+    "userID": "NULL",
+    "eventName": "runEnded",
+    "eventUUID": "267ced240a8a99eca4c8ba2eee73453c",
+    "GA_Value": 0.0,
+    "eventParams": {
+      "wonGame": false,
+      "causeOfDeath": "Enemy (7)'s Bullet",
+      "deathLocation": "Room3",
+      "enemiesKilled": 7,
+      "gameTime": 26.039999,
+      "noOfDeaths": 1,
+      "overallDamageTaken": 135.0,
+      "noOfTeleports": 7,
+      "timeTillfirstTeleport": 1.02,
+      "avgTimeSpentTeleporting": 0.22
+    }
+  },
+  {
+    "eventTimestamp": "28/11/2023 15:51:44",
+    "userID": "NULL",
+    "eventName": "runEnded",
+    "eventUUID": "f6c060e40c9f0cde3c08da2104a9bd01",
+    "GA_Value": 0.0,
+    "eventParams": {
+      "wonGame": false,
+      "causeOfDeath": "Enemy's Bullet",
+      "deathLocation": "",
+      "enemiesKilled": 1,
+      "gameTime": 8.38,
+      "noOfDeaths": 1,
+      "overallDamageTaken": 105.0,
+      "noOfTeleports": 0,
+      "timeTillfirstTeleport": 0.0,
+      "avgTimeSpentTeleporting": "NaN"
+    }
+  },
+  {
+    "eventTimestamp": "28/11/2023 15:54:40",
+    "userID": "NULL",
+    "eventName": "runEnded",
+    "eventUUID": "f779e7efe60c83d72e4b0758b5b524a1",
+    "GA_Value": 0.0,
+    "eventParams": {
+      "wonGame": false,
+      "causeOfDeath": "Enemy (3)'s Bullet",
+      "deathLocation": "Room1",
+      "enemiesKilled": 3,
+      "gameTime": 18.8599987,
+      "noOfDeaths": 1,
+      "overallDamageTaken": 120.0,
+      "noOfTeleports": 2,
+      "timeTillfirstTeleport": 4.06999969,
+      "avgTimeSpentTeleporting": 0.31
+    }
+  },
+  {
+    "eventTimestamp": "28/11/2023 16:12:52",
+    "userID": "NULL",
+    "eventName": "runEnded",
+    "eventUUID": "cee5c9b1f730ff1b77931e6e49238af9",
+    "GA_Value": 0.0,
+    "eventParams": {
+      "wonGame": false,
+      "causeOfDeath": "Enemy (4)'s Bullet",
+      "deathLocation": "Room2",
+      "enemiesKilled": 4,
+      "gameTime": 22.72,
+      "noOfDeaths": 1,
+      "overallDamageTaken": 150.0,
+      "noOfTeleports": 4,
+      "timeTillfirstTeleport": 2.62999988,
+      "avgTimeSpentTeleporting": 0.59
+    }
+  },
+  {
+    "eventTimestamp": "28/11/2023 16:13:01",
+    "userID": "NULL",
+    "eventName": "runEnded",
+    "eventUUID": "e2b49c6d2e95ffbff60da28a9f9cce16",
+    "GA_Value": 0.0,
+    "eventParams": {
+      "wonGame": false,
+      "causeOfDeath": "Enemy (1)'s Bullet",
+      "deathLocation": "Room2",
+      "enemiesKilled": 1,
+      "gameTime": 8.72,
+      "noOfDeaths": 2,
+      "overallDamageTaken": 255.0,
+      "noOfTeleports": 4,
+      "timeTillfirstTeleport": 2.62999988,
+      "avgTimeSpentTeleporting": 0.59
+    }
+  },
+  {
+    "eventTimestamp": "28/11/2023 16:13:10",
+    "userID": "NULL",
+    "eventName": "runEnded",
+    "eventUUID": "bcbb8582521b8ce5f2e0eee4f14bb834",
+    "GA_Value": 0.0,
+    "eventParams": {
+      "wonGame": false,
+      "causeOfDeath": "Enemy (1)'s Bullet",
+      "deathLocation": "Room2",
+      "enemiesKilled": 1,
+      "gameTime": 9.54,
+      "noOfDeaths": 3,
+      "overallDamageTaken": 360.0,
+      "noOfTeleports": 4,
+      "timeTillfirstTeleport": 2.62999988,
+      "avgTimeSpentTeleporting": 0.59
+    }
+  },
+  {
+    "eventTimestamp": "28/11/2023 16:14:19",
+    "userID": "NULL",
+    "eventName": "runEnded",
+    "eventUUID": "0c426d2a8d39489568582ae7ad3ed29a",
+    "GA_Value": 0.0,
+    "eventParams": {
+      "wonGame": false,
+      "causeOfDeath": "Enemy (2)'s Bullet",
+      "deathLocation": "Room1",
+      "enemiesKilled": 2,
+      "gameTime": 29.1799984,
+      "noOfDeaths": 1,
+      "overallDamageTaken": 150.0,
+      "noOfTeleports": 3,
+      "timeTillfirstTeleport": 0.5,
+      "avgTimeSpentTeleporting": 0.61
+    }
+  },
+  {
+    "eventTimestamp": "28/11/2023 16:14:28",
+    "userID": "NULL",
+    "eventName": "runEnded",
+    "eventUUID": "761657356964712ff285b37fb15e5e85",
+    "GA_Value": 0.0,
+    "eventParams": {
+      "wonGame": false,
+      "causeOfDeath": "Enemy (1)'s Bullet",
+      "deathLocation": "Room0",
+      "enemiesKilled": 1,
+      "gameTime": 8.92,
+      "noOfDeaths": 2,
+      "overallDamageTaken": 255.0,
+      "noOfTeleports": 4,
+      "timeTillfirstTeleport": 1.5999999,
+      "avgTimeSpentTeleporting": 0.52
+    }
+  },
+  {
+    "eventTimestamp": "28/11/2023 16:15:29",
+    "userID": "NULL",
+    "eventName": "runEnded",
+    "eventUUID": "9a89dd797d5ddbcca2216a1975397d08",
+    "GA_Value": 0.0,
+    "eventParams": {
+      "wonGame": false,
+      "causeOfDeath": "Enemy (3)'s Bullet",
+      "deathLocation": "Room1",
+      "enemiesKilled": 3,
+      "gameTime": 14.78,
+      "noOfDeaths": 1,
+      "overallDamageTaken": 120.0,
+      "noOfTeleports": 2,
+      "timeTillfirstTeleport": 5.73,
+      "avgTimeSpentTeleporting": 0.21
+    }
+  },
+  {
+    "eventTimestamp": "28/11/2023 16:16:00",
+    "userID": "NULL",
+    "eventName": "runEnded",
+    "eventUUID": "a15895a7c8373c4ba914fb73b78d5f36",
+    "GA_Value": 0.0,
+    "eventParams": {
+      "wonGame": false,
+      "causeOfDeath": "Enemy (2)'s Bullet",
+      "deathLocation": "Room1",
+      "enemiesKilled": 2,
+      "gameTime": 11.54,
+      "noOfDeaths": 1,
+      "overallDamageTaken": 120.0,
+      "noOfTeleports": 2,
+      "timeTillfirstTeleport": 3.53,
+      "avgTimeSpentTeleporting": 0.179999992
+    }
+  },
+  {
+    "eventTimestamp": "28/11/2023 16:16:09",
+    "userID": "NULL",
+    "eventName": "runEnded",
+    "eventUUID": "59fc0850aec1eabf65e480b7963c6cc2",
+    "GA_Value": 0.0,
+    "eventParams": {
+      "wonGame": false,
+      "causeOfDeath": "Enemy (1)'s Bullet",
+      "deathLocation": "Room0",
+      "enemiesKilled": 1,
+      "gameTime": 8.599999,
+      "noOfDeaths": 2,
+      "overallDamageTaken": 225.0,
+      "noOfTeleports": 4,
+      "timeTillfirstTeleport": 1.18,
+      "avgTimeSpentTeleporting": 0.19
+    }
+  },
+  {
+    "eventTimestamp": "28/11/2023 16:17:34",
+    "userID": "NULL",
+    "eventName": "runEnded",
+    "eventUUID": "d7091ad11683981c66f0060546daf4e9",
+    "GA_Value": 0.0,
+    "eventParams": {
+      "wonGame": false,
+      "causeOfDeath": "Enemy's Bullet",
+      "deathLocation": "Room0",
+      "enemiesKilled": 0,
+      "gameTime": 8.28,
+      "noOfDeaths": 1,
+      "overallDamageTaken": 120.0,
+      "noOfTeleports": 2,
+      "timeTillfirstTeleport": 0.53,
+      "avgTimeSpentTeleporting": 0.25
+    }
+  },
+  {
+    "eventTimestamp": "28/11/2023 16:23:41",
+    "userID": "NULL",
+    "eventName": "runEnded",
+    "eventUUID": "9daa2ce554efac986f99407a457895b8",
+    "GA_Value": 0.0,
+    "eventParams": {
+      "wonGame": false,
+      "causeOfDeath": "Fell off the world.",
+      "deathLocation": "",
+      "enemiesKilled": 1,
+      "gameTime": 22.76,
+      "noOfDeaths": 1,
+      "overallDamageTaken": 30.0,
+      "noOfTeleports": 0,
+      "timeTillfirstTeleport": 0.0,
+      "avgTimeSpentTeleporting": "NaN"
+    }
+  },
+  {
+    "eventTimestamp": "28/11/2023 16:25:58",
+    "userID": "NULL",
+    "eventName": "runEnded",
+    "eventUUID": "9f9b463868fd3d81fdae8e05cc125409",
+    "GA_Value": 0.0,
+    "eventParams": {
+      "wonGame": false,
+      "causeOfDeath": "Enemy's Bullet",
+      "deathLocation": "",
+      "enemiesKilled": 1,
+      "gameTime": 8.98,
+      "noOfDeaths": 1,
+      "overallDamageTaken": 105.0,
+      "noOfTeleports": 0,
+      "timeTillfirstTeleport": 0.0,
+      "avgTimeSpentTeleporting": "NaN"
+    }
+  },
+  {
+    "eventTimestamp": "28/11/2023 16:26:18",
+    "userID": "NULL",
+    "eventName": "runEnded",
+    "eventUUID": "c6dfc29eb58877d9600f02f367156258",
+    "GA_Value": 0.0,
+    "eventParams": {
+      "wonGame": false,
+      "causeOfDeath": "Enemy (1)'s Bullet",
+      "deathLocation": "Room0",
+      "enemiesKilled": 1,
+      "gameTime": 19.3,
+      "noOfDeaths": 2,
+      "overallDamageTaken": 210.0,
+      "noOfTeleports": 1,
+      "timeTillfirstTeleport": 1.86,
+      "avgTimeSpentTeleporting": 0.21
+    }
+  },
+  {
+    "eventTimestamp": "28/11/2023 16:26:26",
+    "userID": "NULL",
+    "eventName": "runEnded",
+    "eventUUID": "b4e1be0f635eb0556840c48559885113",
+    "GA_Value": 0.0,
+    "eventParams": {
+      "wonGame": false,
+      "causeOfDeath": "Enemy (1)'s Bullet",
+      "deathLocation": "Room0",
+      "enemiesKilled": 0,
+      "gameTime": 8.559999,
+      "noOfDeaths": 3,
+      "overallDamageTaken": 315.0,
+      "noOfTeleports": 1,
+      "timeTillfirstTeleport": 1.86,
+      "avgTimeSpentTeleporting": 0.21
+    }
+  },
+  {
+    "eventTimestamp": "28/11/2023 16:27:47",
+    "userID": "NULL",
+    "eventName": "runEnded",
+    "eventUUID": "622d7553fddee9b67918760396d095c9",
+    "GA_Value": 0.0,
+    "eventParams": {
+      "wonGame": false,
+      "causeOfDeath": "Enemy's Bullet",
+      "deathLocation": "",
+      "enemiesKilled": 1,
+      "gameTime": 10.1799994,
+      "noOfDeaths": 1,
+      "overallDamageTaken": 105.0,
+      "noOfTeleports": 0,
+      "timeTillfirstTeleport": 0.0,
+      "avgTimeSpentTeleporting": "NaN"
+    }
+  },
+  {
+    "eventTimestamp": "28/11/2023 16:28:46",
+    "userID": "NULL",
+    "eventName": "runEnded",
+    "eventUUID": "0f85b10735fb4f7a719192513ebb5e1f",
+    "GA_Value": 0.0,
+    "eventParams": {
+      "wonGame": false,
+      "causeOfDeath": "Enemy (3)'s Bullet",
+      "deathLocation": "Room1",
+      "enemiesKilled": 3,
+      "gameTime": 12.04,
+      "noOfDeaths": 1,
+      "overallDamageTaken": 120.0,
+      "noOfTeleports": 2,
+      "timeTillfirstTeleport": 5.92,
+      "avgTimeSpentTeleporting": 0.21
+    }
+  },
+  {
+    "eventTimestamp": "28/11/2023 16:31:30",
+    "userID": "NULL",
+    "eventName": "runEnded",
+    "eventUUID": "a3707c1d219dfb109430369a0bd5db4a",
+    "GA_Value": 0.0,
+    "eventParams": {
+      "wonGame": false,
+      "causeOfDeath": "Enemy (5)'s Bullet",
+      "deathLocation": "Room2",
+      "enemiesKilled": 5,
+      "gameTime": 13.46,
+      "noOfDeaths": 1,
+      "overallDamageTaken": 120.0,
+      "noOfTeleports": 2,
+      "timeTillfirstTeleport": 5.9,
+      "avgTimeSpentTeleporting": 0.229999989
+    }
+  },
+  {
+    "eventTimestamp": "28/11/2023 16:42:19",
+    "userID": "NULL",
+    "eventName": "runEnded",
+    "eventUUID": "a8ad49ae18f1e1349d2c3b0cfe7c3c4c",
+    "GA_Value": 0.0,
+    "eventParams": {
+      "wonGame": false,
+      "causeOfDeath": "Enemy (1)'s Bullet",
+      "deathLocation": "",
+      "enemiesKilled": 1,
+      "gameTime": 8.04,
+      "noOfDeaths": 1,
+      "overallDamageTaken": 105.0,
+      "noOfTeleports": 0,
+      "timeTillfirstTeleport": 0.0,
+      "avgTimeSpentTeleporting": "NaN"
+    }
+  },
+  {
+    "eventTimestamp": "28/11/2023 16:46:26",
+    "userID": "NULL",
+    "eventName": "runEnded",
+    "eventUUID": "45cbf4a1da2311cb5bf6141de78ca02f",
+    "GA_Value": 0.0,
+    "eventParams": {
+      "wonGame": true,
+      "enemiesKilled": 19,
+      "gameTime": 38.7399979,
+      "noOfDeaths": 0,
+      "overallDamageTaken": 120.0,
+      "noOfTeleports": 17,
+      "timeTillfirstTeleport": 5.66,
+      "avgTimeSpentTeleporting": 0.24
+    }
+  },
+  {
+    "eventTimestamp": "28/11/2023 16:47:55",
+    "userID": "NULL",
+    "eventName": "runEnded",
+    "eventUUID": "1a5e14ceff57e9fd7af082f4cab0c5ac",
+    "GA_Value": 0.0,
+    "eventParams": {
+      "wonGame": true,
+      "enemiesKilled": 19,
+      "gameTime": 44.46,
+      "noOfDeaths": 0,
+      "overallDamageTaken": 210.0,
+      "noOfTeleports": 18,
+      "timeTillfirstTeleport": 5.95,
+      "avgTimeSpentTeleporting": 0.459999979
+    }
+  },
+  {
+    "eventTimestamp": "28/11/2023 16:50:11",
+    "userID": "NULL",
+    "eventName": "runEnded",
+    "eventUUID": "77a3e8694ddd60c512433a62827f66af",
+    "GA_Value": 0.0,
+    "eventParams": {
+      "wonGame": true,
+      "enemiesKilled": 19,
+      "gameTime": 40.02,
+      "noOfDeaths": 0,
+      "overallDamageTaken": 225.0,
+      "noOfTeleports": 14,
+      "timeTillfirstTeleport": 3.11,
+      "avgTimeSpentTeleporting": 0.51
+    }
+  },
+  {
+    "eventTimestamp": "28/11/2023 16:50:56",
+    "userID": "NULL",
+    "eventName": "runEnded",
+    "eventUUID": "e56639a7b66af0202b868c418c1ebac6",
+    "GA_Value": 0.0,
+    "eventParams": {
+      "wonGame": false,
+      "causeOfDeath": "Enemy (10)'s Bullet",
+      "deathLocation": "Room4",
+      "enemiesKilled": 10,
+      "gameTime": 23.42,
+      "noOfDeaths": 1,
+      "overallDamageTaken": 150.0,
+      "noOfTeleports": 10,
+      "timeTillfirstTeleport": 5.02999973,
+      "avgTimeSpentTeleporting": 0.19
+    }
+  },
+  {
+    "eventTimestamp": "28/11/2023 16:51:41",
+    "userID": "NULL",
+    "eventName": "runEnded",
+    "eventUUID": "81dd7bb392990f38903c34ff9980ee19",
+    "GA_Value": 0.0,
+    "eventParams": {
+      "wonGame": true,
+      "enemiesKilled": 19,
+      "gameTime": 45.2399979,
+      "noOfDeaths": 1,
+      "overallDamageTaken": 360.0,
+      "noOfTeleports": 54,
+      "timeTillfirstTeleport": 0.96,
+      "avgTimeSpentTeleporting": 0.269999981
+    }
+  },
+  {
+    "eventTimestamp": "28/11/2023 16:52:52",
+    "userID": "NULL",
+    "eventName": "runEnded",
+    "eventUUID": "f35d16ca4ffedd091a4ec9fa5ec93390",
+    "GA_Value": 0.0,
+    "eventParams": {
+      "wonGame": true,
+      "enemiesKilled": 16,
+      "gameTime": 28.22,
+      "noOfDeaths": 0,
+      "overallDamageTaken": 150.0,
+      "noOfTeleports": 19,
+      "timeTillfirstTeleport": 5.56999969,
+      "avgTimeSpentTeleporting": 0.21
+    }
+  },
+  {
+    "eventTimestamp": "28/11/2023 16:54:30",
+    "userID": "NULL",
+    "eventName": "runEnded",
+    "eventUUID": "e64565792ba79e8179c673f9be33bce6",
+    "GA_Value": 0.0,
+    "eventParams": {
+      "wonGame": true,
+      "enemiesKilled": 19,
+      "gameTime": 60.3799973,
+      "noOfDeaths": 0,
+      "overallDamageTaken": 210.0,
+      "noOfTeleports": 44,
+      "timeTillfirstTeleport": 4.33999968,
+      "avgTimeSpentTeleporting": 0.24
+    }
   }
 ]

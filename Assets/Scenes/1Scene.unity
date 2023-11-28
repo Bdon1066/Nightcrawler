@@ -1064,7 +1064,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 6596208951146391533, guid: ff8828c2c56867c4bba2b9ef338c516a, type: 3}
       propertyPath: shootInterval
-      value: 0.5
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 6596208951146391533, guid: ff8828c2c56867c4bba2b9ef338c516a, type: 3}
       propertyPath: playerLocation
@@ -1132,7 +1132,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0.5}
   m_AnchorMax: {x: 0, y: 0.5}
-  m_AnchoredPosition: {x: 878, y: -76}
+  m_AnchoredPosition: {x: 907.5, y: -76}
   m_SizeDelta: {x: 482.2, y: 56.2}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &252623053
@@ -4318,6 +4318,10 @@ PrefabInstance:
       propertyPath: m_Layer
       value: 7
       objectReference: {fileID: 0}
+    - target: {fileID: 5866971063789250959, guid: ff8828c2c56867c4bba2b9ef338c516a, type: 3}
+      propertyPath: m_ConstrainProportionsScale
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 6596208951146391533, guid: ff8828c2c56867c4bba2b9ef338c516a, type: 3}
       propertyPath: playerLocation
       value: 
@@ -5160,7 +5164,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: Enemies Killed 3
+  m_text: Enemies Killed 19/19
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
   m_sharedMaterial: {fileID: 2180264, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
@@ -5223,7 +5227,7 @@ MonoBehaviour:
   m_VertexBufferAutoSizeReduction: 0
   m_useMaxVisibleDescender: 1
   m_pageToDisplay: 1
-  m_margin: {x: 0, y: 0, z: -63.296097, w: -5.074169}
+  m_margin: {x: 0, y: 0, z: -89.977066, w: -5.074169}
   m_isUsingLegacyAnimationComponent: 0
   m_isVolumetricText: 0
   m_hasFontAssetChanged: 0
@@ -6707,6 +6711,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   controller: {fileID: 1271473199}
+  playerCombat: {fileID: 1271473203}
   gameManager: {fileID: 1526099666}
   uIManager: {fileID: 1017570062}
   animator: {fileID: 1271473202}
@@ -6909,10 +6914,10 @@ MonoBehaviour:
   controllerScript: {fileID: 1271473198}
   gameManager: {fileID: 1526099666}
   playerFist: {fileID: 1031442571}
-  enemyLayer:
-    serializedVersion: 2
-    m_Bits: 0
   isAttacking: 0
+  enemyAngle: 0
+  autoAim: 0
+  autoAimRange: 5
 --- !u!1 &1277626963
 GameObject:
   m_ObjectHideFlags: 0
@@ -7210,7 +7215,7 @@ Transform:
   serializedVersion: 2
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 260}
-  m_LocalScale: {x: 16.3, y: 1, z: 69.9}
+  m_LocalScale: {x: 17.84, y: 1, z: 69.9}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 1039707760}

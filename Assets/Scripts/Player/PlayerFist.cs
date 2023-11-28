@@ -12,7 +12,11 @@ public class PlayerFist : MonoBehaviour
         {
             if (collider.gameObject.CompareTag("Enemy") || (collider.gameObject.CompareTag("President")))
             {
-                combatScript.DamageEnemy(collider.gameObject);
+                if (collider.gameObject != null)
+                {
+                    combatScript.DamageEnemy(collider.gameObject);
+                }
+               
             }
 
         }
