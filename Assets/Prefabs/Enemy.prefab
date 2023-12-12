@@ -478,8 +478,10 @@ MonoBehaviour:
     m_Bits: 1024
   speed: 20
   gravityScale: 9
-  sightDistance: 40
-  shootInterval: 1
+  sightDistance: 60
+  shootIntervalMin: 0.25
+  shootIntervalMax: 1
+  timeToSpotPlayer: 0.1
 --- !u!65 &6409636901833576954
 BoxCollider:
   m_ObjectHideFlags: 0

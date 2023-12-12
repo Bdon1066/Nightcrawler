@@ -23,7 +23,7 @@ public class UIManager : MonoBehaviour
     [SerializeField] private GameObject timer;
     private void Start()
     {
-        teleportStaminaSlider.maxValue = 200; //hard coding this kinda sucks but cant be arsed wiring it up to the PC rn
+        teleportStaminaSlider.maxValue = 150; //hard coding this kinda sucks but cant be arsed wiring it up to the PC rn
     }
 
     public void UpdateHUD(float health, float teleportStamina)

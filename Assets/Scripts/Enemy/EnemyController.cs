@@ -19,12 +19,18 @@ public class EnemyController : MonoBehaviour
     private bool enableMovement = true;
     [Header("Combat")]
     public float sightDistance;
-    public float shootInterval;
+    public float shootIntervalMin;
+    public float shootIntervalMax;
+    private float shootInterval;
     private float shootTimer;
+    private float spottedPlayerTimer;
+    public float timeToSpotPlayer;
 
     private void Start()
     {
         player = playerLocation.gameObject.GetComponent<PlayerController>();
+        shootInterval = Random.Range(shootIntervalMin, shootIntervalMax);
+
     }
     void Update() //for detecting inputs
     {
@@ -46,28 +52,41 @@ public class EnemyController : MonoBehaviour
         {
             if (hit.collider.gameObject.CompareTag("Player") && !player.isInvisible)
             {
+                var playerPos = playerLocation.position;
+                gun.transform.LookAt(playerPos);
+
+                Vector3 yClampedPos = new Vector3(playerPos.x, this.transform.position.y, playerPos.z);
+                transform.LookAt(yClampedPos);
+
                 // print(this.gameObject.name + " CAN see player");
-                AttackState();
+                if (spottedPlayerTimer > timeToSpotPlayer)
+                {
+                    AttackState();
+                    
+                }
+                else
+                {
+                    spottedPlayerTimer += Time.deltaTime;
+                }
+                
             }
             else
             {
                 IdleState();
+                spottedPlayerTimer = 0;
             }
 
         }
         else
         {
             IdleState();
+            spottedPlayerTimer = 0;
         }
 
     }
     void AttackState()
     {
-        var playerPos = playerLocation.position;
-        gun.transform.LookAt(playerPos);
-
-        Vector3 yClampedPos = new Vector3(playerPos.x, this.transform.position.y, playerPos.z);
-        transform.LookAt(yClampedPos);
+       
 
         var gunScript = gun.GetComponent<Gun>();
         

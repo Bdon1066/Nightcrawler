@@ -57,7 +57,8 @@ public class PlayerController : MonoBehaviour
     [Space(10)]
      public LineRenderer teleportLineDraw;
     [SerializeField] private TeleportHeatmap heatmap;
-     private bool spawnTransparentPlayer;
+     private bool teleportEffectrigger;
+    private bool spawnTransparentPlayer;
 
     [Header("Combat")]
     [SerializeField] private Transform combatHand;
@@ -107,7 +108,7 @@ public class PlayerController : MonoBehaviour
        if (isInvisible)
         {
             timeSpentTeleporting += Time.deltaTime;
-
+            
         }
 
     }
@@ -200,7 +201,7 @@ public class PlayerController : MonoBehaviour
     void TeleportGraphics() //handles graphical aspect of teleporting
     {
         playerGraphics.TransparentGraphics(); //set player model to be transparent
-
+      
         GameObject transparentWall;
 
         //draws line of where teleport will go || TODO add a little silloute thing where the player will end up
@@ -271,7 +272,8 @@ public class PlayerController : MonoBehaviour
 
         controller.Move(moveDir * Time.deltaTime);
         Invoke("StopTeleport", teleportTime - 0.01f);
-       
+        
+
     }
    
 
@@ -294,6 +296,7 @@ public class PlayerController : MonoBehaviour
         teleportLineDraw.enabled = false;
 
         StartCoroutine("StaminaRegenDelay");
+   
     }
    
 
@@ -308,7 +311,7 @@ public class PlayerController : MonoBehaviour
             teleportStamina -= Time.deltaTime * teleportStaminaRegen;
             
         }
-        else if (teleportStamina < startingTeleportStamina && regenStamina)
+        else if (teleportStamina < 50 && regenStamina)
         {
             teleportStamina += Time.deltaTime * teleportStaminaRegen;
            
@@ -328,12 +331,17 @@ public class PlayerController : MonoBehaviour
 
         
     }
-   
+    public void IncreaseStamina(float staminaIncrease)
+    {
+        teleportStamina = teleportStamina + staminaIncrease;
+    }
+
+
     void HealthRegen() 
     {
         uIManager.UpdateHUD(health, teleportStamina);
 
-        if (isInvisible )
+        if (isInvisible && teleportStamina > 50)
         {
             health += Time.deltaTime * healthRegen;
         }

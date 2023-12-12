@@ -73,6 +73,7 @@ public class PlayerCombat : MonoBehaviour
     public void DamageEnemy(GameObject enemy)
    {
         gameManager.enemiesKilled += 1;
+        controllerScript.IncreaseStamina(50);
 
         if (enemy.CompareTag("President"))
         {
