@@ -1589,5 +1589,22 @@
       "timeTillfirstTeleport": 8.17,
       "avgTimeSpentTeleporting": 0.329999983
     }
+  },
+  {
+    "eventTimestamp": "12/12/2023 18:04:46",
+    "userID": "NULL",
+    "eventName": "runEnded",
+    "eventUUID": "bb4935e9d4f6568ea1f8dd1634b5e4ca",
+    "GA_Value": 0.0,
+    "eventParams": {
+      "wonGame": true,
+      "enemiesKilled": 19,
+      "gameTime": 40.76,
+      "noOfDeaths": 0,
+      "overallDamageTaken": 210.0,
+      "noOfTeleports": 19,
+      "timeTillfirstTeleport": 1.07999992,
+      "avgTimeSpentTeleporting": 0.53
+    }
   }
 ]

@@ -85,4 +85,5 @@ Timestamp,UserID,Event Name,UUID,Param/wonGame,Param/causeOfDeath,Param/deathLoc
 12/12/2023 17:34:34,NULL,runEnded,70b520f87e4ecaffd648c3d9f0f8092b,False,Enemy's Bullet,Room5,0,5.87999964,2,330,20,0.59,0.29
 12/12/2023 17:34:46,NULL,runEnded,e6e2996c6a4b0f4ba43ddb988014724c,False,Enemy (2)'s Bullet,Room1,2,12.42,3,450,22,4.65,0.28
 12/12/2023 17:35:06,NULL,runEnded,20f1cbdf06c11de6b08e90b718868127,False,Enemy (4)'s Bullet,Room2,4,19.98,4,600,27,1.26,0.34
-12/12/2023 17:35:18,NULL,runEnded,10591ad3f80d37a95cf12d3d8425d2c9,False,Enemy (3)'s Bullet,Room1,3,12.28,5,705,28,8.17,0.33
+12/12/2023 17:35:18,NULL,runEnded,10591ad3f80d37a95cf12d3d8425d2c9,False,Enemy (3)'s Bullet,Room1,3,12.28,5,705,28,8.17,0.329999983
+12/12/2023 18:04:46,NULL,runEnded,bb4935e9d4f6568ea1f8dd1634b5e4ca,True,,,19,40.76,0,210,19,1.08,0.53

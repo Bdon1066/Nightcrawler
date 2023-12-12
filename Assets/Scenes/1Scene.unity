@@ -6927,7 +6927,7 @@ MonoBehaviour:
   heatmap: {fileID: 0}
   combatHand: {fileID: 1031442572}
   startingHealth: 100
-  healthRegen: 20
+  healthRegen: 15
   healthRegenDelay: 0.5
   roomTriggers: {fileID: 506056955}
 --- !u!143 &1271473199
